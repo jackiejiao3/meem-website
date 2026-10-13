@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEEM | HRSG, Air Cooled Heat Exchanger &amp; Pressure Vessel Manufacturer</title>
+    <meta name="description" content="Modern Energy Equipment Manufacturing Co., Ltd. (MEEM) builds HRSG, air cooled heat exchangers, and ASME pressure vessels in Zhangjiagang, China. ASME S/U/PP certified.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Modern Energy Equipment Manufacturing Co., Ltd.",
+      "alternateName": "MEEM",
+      "url": "https://m-energy.com",
+      "logo": "https://m-energy.com/images/tablogo.png",
+      "email": "info@m-energy.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Duanshan Road, Deji Subdistrict",
+        "addressLocality": "Zhangjiagang City",
+        "addressRegion": "Jiangsu Province",
+        "postalCode": "215635",
+        "addressCountry": "CN"
+      },
+      "description": "MEEM designs and builds HRSG, air cooled heat exchangers, and ASME pressure vessels in Zhangjiagang, China."
+    }
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/iconlogo.png">
+    <link rel="shortcut icon" type="image/png" href="images/iconlogo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Interactive Map Styles -->
+    <style>
+        .map-section { padding:28px 0 40px; background:var(--off-white); }
+        .map-card { background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); overflow:hidden; }
+        .map-title-bar { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); padding:18px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; border-left:4px solid var(--secondary); }
+        .map-title-bar h3 { color:#fff; font-family:var(--font-heading); font-size:1.15rem; font-weight:700; margin:0; }
+        .map-hint-inline { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,0.8); font-size:0.82rem; }
+        .map-hint-dot { width:18px;height:18px;border:2px solid rgba(255,255,255,0.7);border-radius:50%;position:relative;flex-shrink:0; }
+        .map-hint-dot::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5px;height:5px;background:rgba(255,255,255,0.9);border-radius:50%;}
+        .map-container { padding:14px; cursor:pointer; transition:background 0.25s; }
+        .map-container:hover{background:#f8fafc;}
+        .map-image-wrapper { border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); transition:box-shadow 0.3s ease; position:relative; }
+        .map-container:hover .map-image-wrapper { box-shadow:0 8px 28px rgba(21,101,192,0.16); }
+        .map-image-wrapper img { width:100%;height:auto;display:block;transition:transform 0.4s ease; }
+        .map-container:hover .map-image-wrapper img{transform:scale(1.008);}
+        .zoom-badge { position:absolute;bottom:14px;right:14px;background:rgba(13,71,161,0.9);color:#fff;padding:7px 15px;border-radius:20px;font-size:0.8rem;font-weight:500;display:flex;align-items:center;gap:6px;backdrop-filter:blur(4px);transition:all 0.3s ease; }
+        .map-container:hover .zoom-badge{background:var(--primary); transform:translateY(-2px); }
+        .map-caption-text { padding:14px 24px 16px;text-align:center;color:var(--mid-gray);font-size:0.88rem;line-height:1.65;border-top:1px solid #eee; }
+
+        /* Visit Us Transition Section */
+        .visit-transition-section { padding:46px 0 16px; background:linear-gradient(180deg, var(--white) 0%, #f7f9fc 60%, var(--off-white) 100%); text-align:center; position:relative; }
+        .visit-content { max-width:820px; margin:0 auto; }
+        .visit-tag { display:inline-block; font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:3px; color:var(--secondary); margin-bottom:12px; }
+        .visit-text h2 { font-family:var(--font-heading); font-size:2.6rem; font-weight:700; color:var(--primary); margin:0 0 15px; letter-spacing:-0.5px; line-height:1.2; }
+        .visit-desc { font-size:1rem; color:var(--mid-gray); line-height:1.75; margin:0 auto 26px; max-width:720px; }
+        .visit-highlights { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; }
+        .visit-hl-item { display:flex; align-items:center; gap:12px; background:var(--white); padding:14px 22px; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); transition:transform 0.3s ease, box-shadow 0.3s ease; min-width:180px; }
+        .visit-hl-item:hover { transform:translateY(-3px); box-shadow:0 6px 24px rgba(10,36,99,0.12); }
+        .visit-hl-icon { width:44px;height:44px;background:linear-gradient(135deg, #2a3c5a 0%, var(--primary-dark) 100%);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0; position:relative; }
+        .visit-hl-icon::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--secondary);border-radius:6px 6px 0 0;}
+        .visit-hl-text { text-align:left; }
+        .visit-hl-text strong { display:block; font-size:0.85rem; color:var(--primary-dark); font-weight:700; }
+        .visit-hl-text span { display:block; font-size:0.78rem; color:var(--mid-gray); margin-top:2px; }
+        .visit-arrow-hint { margin-top:20px; }
+        .visit-arrow-hint span { display:block; font-size:0.82rem; color:var(--primary-accent); letter-spacing:0.5px; font-weight:500; margin-bottom:8px; }
+        .visit-arrow-line { width:2px;height:22px;background:linear-gradient(to bottom, var(--primary-accent), transparent); margin:0 auto; position:relative; border-radius:1px; }
+        .visit-arrow-dot { width:8px;height:8px;background:var(--primary); border-radius:50%; position:absolute; bottom:-4px;left:50%;transform:translateX(-50%); animation:visitBounce 1.8s ease-in-out infinite; }
+        @keyframes visitBounce { 0%,100%{transform:translateX(-50%) translateY(0);opacity:1;} 50%{transform:translateX(-50%) translateY(6px);opacity:0.5;} }
+
+        /* Lightbox */
+        .lb-overlay { display:none;position:fixed;inset:0;background:rgba(0,0,0,0.89);z-index:9999;justify-content:center;align-items:center;backdrop-filter:blur(8px);opacity:0;transition:opacity 0.35s ease; }
+        .lb-overlay.active{display:flex;opacity:1;}
+        .lb-content{ position:relative;max-width:95vw;max-height:95vh;transform:scale(0.92);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+        .lb-overlay.active .lb-content{transform:scale(1); }
+        .lb-content img{ max-width:95vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 80px rgba(0,0,0,0.5);user-select:none;-webkit-user-drag:none;cursor:grab; }
+        .lb-content img:active{cursor:grabbing;}
+        .lb-close-btn{ position:fixed;top:22px;right:26px;width:46px;height:46px;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.24);border-radius:50%;color:#fff;font-size:20px;cursor:pointer;z-index:10001;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease; }
+        .lb-close-btn:hover{ background:rgba(255,255,255,0.28); transform:rotate(90deg); }
+        .lb-info-bar{ position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(13,71,161,0.9);color:#fff;padding:9px 24px;border-radius:24px;font-size:0.82rem;z-index:10001;backdrop-filter:blur(4px);white-space:nowrap; }
+        .lb-zoom-controls{ position:fixed;bottom:76px;right:26px;display:flex;flex-direction:column;gap:7px;z-index:10001; }
+        .lb-zoom-btn{ width:42px;height:42px;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.24);border-radius:10px;color:#fff;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease; }
+        .lb-zoom-btn:hover{ background:rgba(255,255,255,0.28); }
+        .lb-zoom-level{ position:fixed;bottom:176px;right:26px;background:rgba(0,0,0,0.55);color:#fff;padding:4px 12px;border-radius:12px;font-size:0.76rem;z-index:10001; }
+        @media(max-width:768px){
+            .visit-transition-section{padding:36px 0 10px;}
+            .visit-text h2{font-size:1.7rem;}
+            .visit-desc{font-size:0.92rem;margin-bottom:24px;}
+            .visit-highlights{flex-direction:column;align-items:center;gap:14px;}
+            .visit-hl-item{min-width:auto;width:100%;max-width:320px;justify-content:flex-start;}
+            .map-title-bar{flex-direction:column;text-align:center;}
+            .map-container{padding:14px;}
+            .lb-zoom-controls{bottom:66px;right:14px;}
+            .lb-zoom-btn{width:38px;height:38px;}
+            .lb-info-bar{font-size:0.75rem;padding:7px 16px;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-envelope"></i> info@m-energy.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#contacts"><i class="fas fa-phone"></i> Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <header class="main-header" id="mainHeader">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <a href="#homepage" class="logo">
+                    <img src="images/tablogo.png" alt="MEEM - Modern Energy Equipment Manufacturing" class="logo-img" />
+                    <span class="logo-sub">Modern Energy Equipment</span>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#homepage" class="active">Homepage</a></li>
+
+                    <li class="dropdown">
+                        <a href="#about">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                            <li><a href="governance.html">Governance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#products">Products <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu dropdown-wide">
+                            <li><a href="heat-recovery.html">Heat Recovery Steam Generator</a></li>
+                            <li><a href="air-cooled.html">Air Cooled Heat Exchanger</a></li>
+                            <li><a href="pressure-vessels.html">Pressure Vessels</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#capabilities">Capabilities <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="facility.html">Facility &amp; Equipment</a></li>
+                            <li><a href="laboratory.html">Laboratory</a></li>
+                            <li><a href="certifications.html">Certifications</a></li>
+                            <li><a href="project-gallery.html">Project Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#contacts" class="btn-nav-contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="homepage">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-tagline">Powering the Future of Energy</span>
+                <h1>Modern Energy Equipment<br><span class="highlight">Manufacturing Co., Ltd.</span></h1>
+                <p class="hero-description">
+                    Delivering customized solutions for traditional and non-traditional energy projects worldwide.
+                    Specializing in high-tech professional manufacturing of heat exchangers, HRSG modules,
+                    pressure vessels, and modular structures for power generation industries.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Our Products</a>
+                    <a href="about-us.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#about-intro"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT INTRO SECTION ==================== -->
+    <section class="section about-intro" id="about-intro">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Who We Are</span>
+                <h2>About MEEM</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>A Global Leader in Energy Equipment Manufacturing</h3>
+                    <p>
+                        Modern Energy Equipment Manufacturing Co., Ltd. (MEEM) is a premier manufacturer
+                        specializing in high-quality, custom-engineered equipment for the global energy sector.
+                        With state-of-the-art facilities and a team of experienced professionals,
+                        we deliver innovative solutions that meet the most demanding industry standards.
+                    </p>
+                    <p>
+                        From heat recovery steam generators to advanced finned tube heat exchangers,
+                        our products serve combined-cycle power plants, industrial facilities, and
+                        renewable energy installations around the world.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="60">60+</span>
+                            <span class="stat-label">Countries Served</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="300">300+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/workshop_birdview.webp" alt="MEEM Modern Manufacturing Facility" />
+                        <div class="image-caption">State-of-the-Art Manufacturing Facility</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUCTS SECTION ==================== -->
+    <section class="section products-section" id="products">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">What We Make</span>
+                <h2>Our Products</h2>
+                <div class="section-line"></div>
+                <p class="section-desc">
+                    A comprehensive portfolio of precision-engineered energy equipment
+                    designed for optimal performance and reliability.
+                </p>
+            </div>
+
+            <div class="products-grid">
+
+                <!-- ========== Category A: Heat Recovery Steam Generator ========== -->
+                <div class="product-card product-category" id="heat-recovery">
+                    <div class="product-card-image">
+                        <img src="images/hrsg_modules.webp" alt="Heat Recovery Steam Generator Modules" />
+                    </div>
+                    <div class="product-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Heat Recovery Steam Generator</h3>
+                    <p>Complete HRSG module solutions for combined-cycle and conventional power plants — from finned tubes and headers to shop-assembled modules.</p>
+                    <ul class="sub-product-list compact">
+                        <li><i class="fas fa-grip-lines"></i> <span>Finned Tubes</span></li>
+                        <li><i class="fas fa-arrows-alt-h"></i> <span>Headers &amp; Manifolds</span></li>
+                        <li><i class="fas fa-stream"></i> <span>Harps / Platens</span></li>
+                        <li><i class="fas fa-cubes"></i> <span>Bundles / Modules</span></li>
+                    </ul>
+                    <a href="heat-recovery.html" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- ========== Category B: Air Cooled Heat Exchanger ========== -->
+                <div class="product-card product-category" id="air-cooled">
+                    <div class="product-card-image">
+                        <img src="images/air_finned_cooler.webp" alt="Air Cooled Heat Exchanger" />
+                    </div>
+                    <div class="product-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Air Cooled Heat Exchanger</h3>
+                    <p>Water-free cooling solutions for power generation and process industries, from compact coolers to utility-scale condenser systems.</p>
+                    <ul class="sub-product-list compact">
+                        <li><i class="fas fa-snowflake"></i> <span>Air Finned Cooler</span></li>
+                        <li><i class="fas fa-temperature-low"></i> <span>Air Cooled Condenser</span></li>
+                        <li><i class="fas fa-th-large"></i> <span>Modular ACHE</span></li>
+                        <li><i class="fas fa-sync-alt"></i> <span>Hot Air Recirculation ACHE</span></li>
+                        <li><i class="fas fa-grip-lines-vertical"></i> <span>Tube Bundle &amp; Finned Tube</span></li>
+                    </ul>
+                    <a href="air-cooled.html" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- ========== Category C: Pressure Vessels ========== -->
+                <div class="product-card product-category" id="pressure-vessels">
+                    <div class="product-card-image pv-card-image">
+                        <img src="images/pressure_vessel.webp" alt="Pressure Vessel" />
+                    </div>
+                    <div class="product-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Pressure Vessels</h3>
+                    <p>Custom pressure vessels engineered to ASME VIII standards for petrochemical, power generation, and industrial processing applications.</p>
+                    <ul class="sub-product-list compact">
+                        <li><i class="fas fa-flask"></i> <span>Process Vessels</span></li>
+                        <li><i class="fas fa-thermometer-half"></i> <span>Reactor Vessels</span></li>
+                        <li><i class="fas fa-compress-arrows-alt"></i> <span>Storage Vessels</span></li>
+                    </ul>
+                    <a href="pressure-vessels.html" class="product-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CAPABILITIES SECTION ==================== -->
+    <section class="section capabilities-section" id="capabilities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>Our Capabilities</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="capabilities-grid">
+                <!-- Capability 1: Facility & Equipment -->
+                <div class="capability-item">
+                    <div class="cap-number">01</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-building"></i> Facility &amp; Equipment</h3>
+                        <p>World-class manufacturing facility with dedicated production zones for fabrication, assembly, testing, and quality control. Equipped with advanced CNC cutting, automated welding systems, plate rolling machines, and heavy-duty lifting cranes for large-scale modular assemblies.</p>
+                    </div>
+                </div>
+
+                <!-- Capability 2: Laboratory -->
+                <div class="capability-item">
+                    <div class="cap-number">02</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-flask"></i> Laboratory</h3>
+                        <p>In-house materials testing laboratory equipped for chemical analysis, mechanical testing, metallurgical examination, non-destructive testing (NDT), and welding procedure qualification.</p>
+                    </div>
+                </div>
+
+                <!-- Capability 3: Certifications -->
+                <div class="capability-item">
+                    <div class="cap-number">03</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                        <p>Holding internationally recognized certifications including ASME S, U &amp; PP Stamps, ISO 9001 Quality Management System, ISO 14001 Environmental Management, and various national and international code compliances.</p>
+                    </div>
+                </div>
+
+                <!-- Capability 4: Project Gallery -->
+                <div class="capability-item gallery-highlight">
+                    <div class="cap-number">04</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-images"></i> Project Gallery</h3>
+                        <p>A proven track record of successful project deliveries across Asia, Middle East, Africa, Europe, and the Americas. From small component replacement to full turnkey module supply — we've done it all.</p>
+                        <a href="project-gallery.html" class="cap-link">View Our Projects <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VISIT US / LOCATION TRANSITION ==================== -->
+    <section class="visit-transition-section" id="visitUs">
+        <div class="container">
+            <div class="visit-content">
+                <div class="visit-text">
+                    <span class="visit-tag">Our Location</span>
+                    <h2>Want to Visit Us?</h2>
+                    <p class="visit-desc">
+                        MEEM — the third manufacturing facility of Modern Group — is located in Zhangjiagang,
+                        a thriving industrial city along the Yangtze River in Jiangsu Province.
+                        Our facility benefits from exceptional transport connectivity: approximately
+                        <strong>2.5 hours </strong>by car to Shanghai (PVG / Hongqiao),
+                        <strong>1 hour </strong>by car to Wuxi Shuofang International Airport,
+                        and only <strong>30 minutes </strong>by car to Zhangjiagang High-Speed Railway Station.
+                        Whether you arrive by air, rail, or road, getting to MEEM is convenient from anywhere in the Yangtze River Delta.
+                    </p>
+                </div>
+                <div class="visit-highlights">
+                    <div class="visit-hl-item">
+                        <div class="visit-hl-icon"><i class="fas fa-plane"></i></div>
+                        <div class="visit-hl-text">
+                            <strong>Shanghai Airports</strong>
+                            <span>PVG &amp; Hongqiao — ~2.5h</span>
+                        </div>
+                    </div>
+                    <div class="visit-hl-item">
+                        <div class="visit-hl-icon"><i class="fas fa-plane-departure"></i></div>
+                        <div class="visit-hl-text">
+                            <strong>Wuxi Shuofang</strong>
+                            <span>International Airport — ~1h</span>
+                        </div>
+                    </div>
+                    <div class="visit-hl-item">
+                        <div class="visit-hl-icon"><i class="fas fa-train"></i></div>
+                        <div class="visit-hl-text">
+                            <strong>Zhangjiagang HSR</strong>
+                            <span>High-Speed Railway — ~30 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="visit-arrow-hint">
+                <span>Explore our locations on the interactive map below</span>
+                <div class="visit-arrow-line"><div class="visit-arrow-dot"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INTERACTIVE LOCATION MAP ==================== -->
+    <section class="map-section" id="locationMap">
+        <div class="container">
+            <div class="map-card">
+                <div class="map-title-bar">
+                    <h3>Location of MEEM, Other Modern Group Facilities &amp; Nearby Transport Hubs</h3>
+                    <div class="map-hint-inline">
+                        <div class="map-hint-dot"></div>
+                        Click map to zoom &amp; explore details
+                    </div>
+                </div>
+
+                <div class="map-container" onclick="openMapLb()">
+                    <div class="map-image-wrapper">
+                        <img src="images/location_map_lg.webp" alt="Modern Group Strategic Sites & Nearby Transport Hubs Map" loading="lazy" />
+                        <div class="zoom-badge">&#128269; Click to Enlarge &amp; Zoom</div>
+                    </div>
+                </div>
+                <div class="map-caption-text">
+                    Interactive location map showing Modern Group's three manufacturing facilities along the Yangtze River corridor,
+                    with key transport hubs including Shanghai Pudong/Hongqiao Airports, major ports (Zhangjiagang, Taicang, Nantong),
+                    and high-speed rail connections enabling efficient global logistics.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Overlay -->
+    <div class="lb-overlay" id="mapLbox" onclick="closeMapLbBg(event)">
+        <button class="lb-close-btn" onclick="closeMapLbFn()">&times;</button>
+        <div class="lb-zoom-level" id="mLvl">100%</div>
+        <div class="lb-zoom-controls">
+            <button class="lb-zoom-btn" onclick="mZIn(event)" title="Zoom In">+</button>
+            <button class="lb-zoom-btn" onclick="mZOut(event)" title="Zoom Out">&minus;</button>
+            <button class="lb-zoom-btn" onclick="mZReset(event)" title="Reset">&#8634;</button>
+        </div>
+        <div class="lb-content"><img src="images/location_map_lg.webp" alt="Map Full Size" id="mImg" /></div>
+        <div class="lb-info-bar">&#128270; Scroll to zoom &bull; Drag to pan &bull; Press Esc to close</div>
+    </div>
+
+    <script>
+    (function(){
+        var lb=document.getElementById('mapLbox'),img=document.getElementById('mImg'),lv=document.getElementById('mLvl'),
+            zm=1,tx=0,ty=0,dg=false,sX,sY;
+        function u(){ img.style.transform='scale('+zm+') translate('+tx+'px,'+ty+'px)'; lv.textContent=Math.round(zm*100)+'%'; }
+        window.openMapLb=function(){ lb.classList.add('active'); document.body.style.overflow='hidden'; zm=1;tx=0;ty=0;u(); };
+        window.closeMapLbFn=function(){ lb.classList.remove('active'); document.body.style.overflow=''; };
+        window.closeMapLbBg=function(e){ if(e.target===lb) closeMapLbFn(); };
+        function z(n){ zm=Math.max(.5,Math.min(5,n)); u(); }
+        window.mZIn=function(e){if(e)e.stopPropagation();z(zm+0.3);};
+        window.mZOut=function(e){if(e)e.stopPropagation();z(zm-0.3);};
+        window.mZReset=function(e){if(e)e.stopPropagation();zm=1;tx=0;ty=0;u();};
+        lb.addEventListener('wheel',function(e){e.preventDefault();z(zm+(e.deltaY>0?-0.15:0.15));},{passive:false});
+        img.addEventListener('mousedown',function(e){if(zm>1){dg=true;sX=e.clientX-tx;sY=e.clientY-ty;img.style.cursor='grabbing';}});
+        document.addEventListener('mousemove',function(e){if(!dg)return;tx=e.clientX-sX;ty=e.clientY-sY;u();});
+        document.addEventListener('mouseup',function(){dg=false;img.style.cursor=zm>1?'grab':'default';});
+        var tD=0,tZ=1;
+        img.addEventListener('touchstart',function(e){if(e.touches.length===2){tD=gDist(e.touches);tZ=zm;}else if(e.touches.length===1&&zm>1){dg=true;sX=e.touches[0].clientX-tx;sY=e.touches[0].clientY-ty;}}, {passive:true});
+        img.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();z(tZ*gDist(e.touches)/tD);}else if(e.touches.length===1&&dg){tx=e.touches[0].clientX-sX;ty=e.touches[0].clientY-sY;u();}}, {passive:false});
+        img.addEventListener('touchend',function(){dg=false;});
+        function gDist(t){var dx=t[0].clientX-t[1].clientX,dy=t[0].clientY-t[1].clientY;return Math.sqrt(dx*dx+dy*dy);}
+        document.addEventListener('keydown',function(e){if(!lb.classList.contains('active'))return;if(e.key==='Escape')closeMapLbFn();else if(e.key==='+'||e.key==='=')mZIn();else if(e.key==='-')mZOut();else if(e.key==='0')mZReset();});
+    })();
+    </script>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Discuss Your Next Project?</h2>
+                <p>Contact our engineering team today for customized solutions tailored to your specific requirements.</p>
+                <a href="mailto:info@m-energy.com" class="btn btn-primary btn-large">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACTS SECTION ==================== -->
+    <section class="section contacts-section" id="contacts">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Contact Us</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email Us</h4>
+                        <a href="mailto:info@m-energy.com">info@m-energy.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>Location</h4>
+                        <p>1 Duanshan Road, Deji Subdistrict, Zhangjiagang City, Jiangsu Province 215635</p>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="form-handler.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email *" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/tablogo.png" alt="MEEM Logo" class="footer-logo" />
+                    <p>Modern Energy Equipment Manufacturing Co., Ltd. — Delivering customized solutions for traditional and non-traditional energy projects through high-tech professional manufacturing.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#homepage">Homepage</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="index.html#capabilities">Capabilities</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="heat-recovery.html">Heat Recovery Steam Generator</a></li>
+                        <li><a href="air-cooled.html">Air Cooled Heat Exchanger</a></li>
+                        <li><a href="pressure-vessels.html">Pressure Vessels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@m-energy.com">info@m-energy.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>1 Duanshan Road, Deji Subdistrict, Zhangjiagang City, Jiangsu Province 215635</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Modern Energy Equipment Manufacturing Co., Ltd. (MEEM). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

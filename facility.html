@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility &amp; Equipment | MEEM Manufacturing</title>
+    <meta name="description" content="Tour MEEM's 85,000 m² Zhangjiagang facility and equipment: 50,000 m² workshops, CNC machining, welding, heat treatment and assembly platforms.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .equipment-card { transition: var(--transition-normal); }
+        .equipment-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .equipment-card img { transition: var(--transition-slow); }
+        .equipment-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-envelope"></i> info@m-energy.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#contacts"><i class="fas fa-phone"></i> Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <header class="main-header scrolled" id="mainHeader">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/tablogo.png" alt="MEEM Logo" class="logo-img" />
+                    <span class="logo-sub">Modern Energy Equipment</span>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Homepage</a></li>
+                    <li class="dropdown">
+                        <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                            <li><a href="governance.html">Governance</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html#products">Products <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu dropdown-wide">
+                            <li><a href="heat-recovery.html">Heat Recovery Steam Generator</a></li>
+                            <li><a href="air-cooled.html">Air Cooled Heat Exchanger</a></li>
+                            <li><a href="pressure-vessels.html">Pressure Vessels</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="active">Capabilities <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="facility.html" style="color:var(--primary);font-weight:600;">Facility &amp; Equipment</a></li>
+                            <li><a href="laboratory.html">Laboratory</a></li>
+                            <li><a href="certifications.html">Certifications</a></li>
+                            <li><a href="project-gallery.html">Project Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contacts" class="btn-nav-contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== PAGE HERO BANNER ==================== -->
+    <section class="page-hero" style="margin-top:75px;background:linear-gradient(135deg, #1a3a6b 0%, var(--primary) 50%, #0d2b6e 100%);padding:100px 0 70px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-50px;right:-50px;width:350px;height:350px;border-radius:50%;background:rgba(247,147,30,0.07);filter:blur(50px);"></div>
+        <div style="position:absolute;bottom:-60px;left:-30px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04);filter:blur(35px);"></div>
+        <div class="container" style="position:relative;z-index:2;">
+            <span style="display:inline-block;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--secondary);margin-bottom:12px;">Our Capabilities</span>
+            <h1 style="font-family:var(--font-heading);font-size:3rem;font-weight:800;color:var(--white);letter-spacing:-0.5px;margin-bottom:16px;">Facility &amp; Equipment</h1>
+            <p style="max-width:600px;margin:0 auto;font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.7;">A purpose-built manufacturing facility combined with a comprehensive suite of precision equipment for heavy-duty energy equipment fabrication.</p>
+        </div>
+    </section>
+
+    <!-- ==================== FACILITY OVERVIEW ==================== -->
+    <section class="section" style="background:var(--white);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Strategically Located Manufacturing Facility</h3>
+                    <p>
+                        MEEM's manufacturing facility is situated in Zhangjiagang City, Jiangsu Province,
+                        within China's most dynamic industrial corridor along the Yangtze River. This strategic location provides
+                        excellent logistics access for both domestic and international shipping of heavy industrial equipment.
+                    </p>
+                    <p>
+                        The facility was purpose-built as Modern Group's third manufacturing operation, incorporating lessons learned
+                        from our established sister facilities to optimize workflow efficiency, material handling, and quality assurance
+                        processes specifically tailored for HRSG, ACHE, and pressure vessel fabrication.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">85,000<span style="font-size:0.55rem;vertical-align:super;">m&sup2;</span></span>
+                            <span class="stat-label">Yard Area</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50,000<span style="font-size:0.55rem;vertical-align:super;">m&sup2;</span></span>
+                            <span class="stat-label">Workshops</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">400</span>
+                            <span class="stat-label">Staff</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/workshop_birdview.webp" alt="MEEM Manufacturing Facility" />
+                        <div class="image-caption">MEEM Manufacturing Facility in Zhangjiagang</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FACILITY AT A GLANCE ==================== -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">MEEM Workshop</span>
+                    <h3>Modern Group's Third Manufacturing Facility</h3>
+                    <p>
+                        <strong>Modern Energy Equipment Manufacturing Co., Ltd. (MEEM)</strong> is the third manufacturing facility
+                        established by Modern Group, strategically positioned in Zhangjiagang, Jiangsu Province to expand the
+                        group's capabilities in specialized energy equipment fabrication.
+                    </p>
+                    <p>
+                        MEEM focuses exclusively on three core product lines: <strong>Heat Recovery Steam Generators (HRSG)</strong>,
+                        <strong>Air Cooled Heat Exchangers</strong>, and <strong>Pressure Vessels</strong>. This focused specialization,
+                        combined with an 85,000 m&sup2; yard and 50,000 m&sup2; of workshop space, allows us to deliver
+                        code-compliant, high-quality energy equipment to EPC contractors and end users worldwide.
+                    </p>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;">
+                        <span style="background:var(--primary);color:var(--white);padding:6px 14px;border-radius:4px;font-size:0.78rem;font-weight:600;">Heat Recovery Steam Generator</span>
+                        <span style="background:var(--primary);color:var(--white);padding:6px 14px;border-radius:4px;font-size:0.78rem;font-weight:600;">Air Cooled Heat Exchanger</span>
+                        <span style="background:var(--primary);color:var(--white);padding:6px 14px;border-radius:4px;font-size:0.78rem;font-weight:600;">Pressure Vessels</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/workshop.webp" alt="MEEM Manufacturing Workshop" />
+                        <div class="image-caption">MEEM Manufacturing Workshop</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FACILITY HIGHLIGHTS ==================== -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Facility Features</span>
+                <h2>Key Infrastructure Highlights</h2>
+                <div class="section-line"></div>
+                <p style="max-width:650px;margin:0 auto;color:var(--mid-gray);font-size:1rem;line-height:1.7;">
+                    Our 85,000 m&sup2; facility is equipped with specialized infrastructure designed specifically for large-scale energy
+                    equipment manufacturing, from raw material receiving through final module assembly.
+                </p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <div class="cap-number">01</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-warehouse"></i> Covered Fabrication Bays</h3>
+                        <p>Spacious indoor fabrication bays with overhead crane coverage throughout, enabling year-round manufacturing operations regardless of weather conditions. Climate-controlled areas available for precision welding and sensitive assembly work.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">02</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-crane"></i> Heavy-Lift Crane Capacity</h3>
+                        <p>Multiple high-capacity overhead cranes with lifting capacities suited for handling large-diameter pressure vessel shells, HRSG harps, and complete ACHE modules. Tandem lift capability for exceptionally heavy assemblies.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">03</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-ship"></i> Logistics Access</h3>
+                        <p>Excellent access to Yangtze River ports and major road networks for transporting oversized modules and heavy-lift equipment. Strategic location enables efficient shipment to Shanghai seaport, Pudong/Hongqiao airports, and inland destinations.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">04</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-project-diagram"></i> Modular Assembly Zone</h3>
+                        <p>Dedicated open assembly area for shop-assembling HRSG modules, ACC structures, and skid-mounted systems before shipment. Staging capacity allows parallel assembly of multiple project modules simultaneously.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">05</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-boxes-stacked"></i> Raw Material Storage</h3>
+                        <p>Organized raw material yard with covered storage for carbon steel, stainless steel, and alloy plates, pipes, tubes, and structural shapes. Inventory management system ensures full material traceability from receipt to finished product.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">06</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-shield-halved"></i> Controlled Environment Areas</h3>
+                        <p>Designated zones with controlled temperature and humidity for critical welding operations (SAW, GTAW), NDT inspection areas, and surface preparation/coating application bays to ensure consistent quality outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EQUIPMENT INTRO ==================== -->
+    <section class="section" style="background:var(--white);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Precision Equipment for Precision Manufacturing</h3>
+                    <p>
+                        MEEM has invested in a comprehensive range of modern manufacturing equipment specifically selected for
+                        HRSG component fabrication, air-cooled heat exchanger assembly, and pressure vessel production.
+                        Our equipment fleet is maintained to the highest standards and regularly calibrated
+                        to ensure consistent output quality.
+                    </p>
+                    <p>
+                        From CNC-controlled plate cutting to automated welding systems, every piece of equipment in our shop
+                        is chosen to support our core mission: delivering code-compliant, high-quality energy equipment
+                        that meets the exacting requirements of global EPC contractors and end users.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">CNC</span>
+                            <span class="stat-label">Cutting Systems</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">SAW/GTAW</span>
+                            <span class="stat-label">Welding Methods</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Full Range</span>
+                            <span class="stat-label">Forming Capacity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/workshop.webp" alt="MEEM Manufacturing Equipment" />
+                        <div class="image-caption">Modern Equipment Fleet for Energy Equipment Fabrication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EQUIPMENT GALLERY ==================== -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Equipment Gallery</span>
+                <h2>Manufacturing Equipment</h2>
+                <div class="section-line"></div>
+                <p style="max-width:650px;margin:0 auto;color:var(--mid-gray);font-size:1rem;line-height:1.7;">
+                    A selection of the key machines and systems used in our Zhangjiagang facility for HRSG, air-cooled heat exchanger, and pressure vessel fabrication.
+                </p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
+                <!-- Equipment Card 1 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/cnc-milling-headers.webp" alt="CNC Milling for Headers" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">CNC Milling for Headers</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Precision machining of HRSG header boxes and nozzles to ensure accurate weld preparation and fit-up.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 2 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/cnc-milling-center.webp" alt="CNC Milling Center" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">CNC Milling Center</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">High-precision CNC milling for tube sheets, flanges, and structural components across all product lines.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 3 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/laser-cutting-tube-sheets.webp" alt="Laser Cutting for Tube Sheets" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Laser Cutting for Tube Sheets</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Accurate cutting of tube sheet holes and patterns for HRSG and air-cooled heat exchanger bundles.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 4 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/clam-furnace-pwht.webp" alt="Clam-type Furnace for Harps PWHT" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Clam-type Furnace for Harps PWHT</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Post-weld heat treatment of HRSG harp assemblies and pressure vessel components to relieve residual stresses.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 5 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/munters-air-dryer.webp" alt="Munters Air Dryer" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Munters Air Dryer</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Industrial air drying system used after hydrostatic testing to remove residual moisture from completed equipment.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 6 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/finned-tubes.webp" alt="Finned Tubes" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Finned Tubes</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">High-efficiency finned tubes for air-cooled heat exchangers, enhancing thermal performance and heat transfer.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 7 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/gantry-cnc-machining-center.webp" alt="Gantry CNC Machining Center" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Gantry CNC Machining Center</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Large gantry-type machining center for oversized workpieces such as tube sheets, frames, and vessel components.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 8 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/internal-welding-machine.webp" alt="Internal Welding Machine" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Internal Welding Machine</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Automated internal tube-to-tubesheet welding for consistent, high-integrity joints in heat exchanger bundles.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 9 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/external-welding-machine.webp" alt="External Welding Machine" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">External Welding Machine</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">External tube-to-tubesheet welding station for HRSG and ACHE tube bundles with repeatable arc control.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 10 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/planar-milling-machine.webp" alt="Planar Milling Machine" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Planar Milling Machine</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Heavy-duty planar milling for large flat plates, structural weldments, and vessel flange surfaces.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">ACHE</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 11 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/header-assembly-platform.webp" alt="Header Assembly Platform" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Header Assembly Platform</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Dedicated fixture platform for accurate HRSG header assembly and welding, ensuring consistent geometry.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Equipment Card 12 -->
+                <div class="equipment-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
+                    <div style="height:220px;overflow:hidden;">
+                        <img src="images/annealing-furnace.webp" alt="Annealing Heat Treatment Furnace" style="width:100%;height:100%;object-fit:cover;transition:var(--transition-slow);" />
+                    </div>
+                    <div style="padding:24px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Annealing Heat Treatment Furnace</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">Batch heat treatment furnace for normalizing, annealing, and stress relieving of fabricated components.</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">HRSG</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">Pressure Vessels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CUTTING & FORMING ==================== -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cutting &amp; Forming</span>
+                <h2>Plate Processing Equipment</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <div class="cap-number">01</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-cut"></i> CNC Plasma &amp; Flame Cutting</h3>
+                        <p>High-precision CNC plasma and oxy-fuel cutting machines capable of processing thick carbon steel and alloy plates up to substantial thicknesses with tight tolerances. Nesting optimization software minimizes material waste.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">02</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-circle-dot"></i> Plate Rolling Machines</h3>
+                        <p>Hydraulic plate rolling machines for forming cylindrical shells, vessel heads, and curved sections. Capacity covers a wide range of plate thicknesses and diameters required for pressure vessels and HRSG casings.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">03</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-press"></i> Press Brakes &amp; Forming Presses</h3>
+                        <p>Hydraulic press brakes for precise bending of structural shapes, stiffener plates, and frame components. Used extensively in ACHE structure fabrication and pressure vessel nozzle pad preparation.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">04</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-gear"></i> Dishing / Head Forming</h3>
+                        <p>Equipment and tooling for forming pressure vessel heads including torispherical, ellipsoidal, and hemispherical configurations to ASME code dimensional requirements with consistent accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MACHINING ==================== -->
+    <section class="section" style="background:var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Machining Operations</span>
+                <h2>Machining &amp; Finishing Equipment</h2>
+                <div class="section-line"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;">
+                <div style="background:linear-gradient(145deg,var(--off-white),var(--white));border-radius:var(--radius-lg);padding:36px;border-top:4px solid var(--secondary);box-shadow:var(--shadow-sm);">
+                    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+                        <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-drafting-compass" style="color:var(--white);font-size:1.15rem;"></i>
+                        </div>
+                        <h3 style="font-family:var(--font-heading);font-size:1.15rem;font-weight:700;color:var(--primary);margin:0;">CNC Boring &amp; Milling</h3>
+                    </div>
+                    <p style="font-size:0.93rem;color:var(--dark-gray);line-height:1.75;">
+                        Horizontal boring mills and CNC machining centers for precision machining of flange faces,
+                        nozzle necks, tube sheets, and other critical surfaces requiring close tolerances on large workpieces.
+                    </p>
+                    <ul style="sub-product-list;margin-top:14px;padding-left:0;list-style:none;">
+                        <li style="padding:6px 0 6px 20px;position:relative;font-size:0.88rem;color:var(--mid-gray);"><i class="fas fa-check" style="position:absolute;left:0;color:var(--secondary);font-size:0.72rem;"></i> Flange face finish machining</li>
+                        <li style="padding:6px 0 6px 20px;position:relative;font-size:0.88rem;color:var(--mid-gray);"><i class="fas fa-check" style="position:absolute;left:0;color:var(--secondary);font-size:0.72rem;"></i> Nozzle bore &amp; counterbore operations</li>
+                        <li style="padding:6px 0 6px 20px;position:relative;font-size:0.88rem;color:var(--mid-gray);"><i class="fas fa-check" style="position:absolute;left:0;color:var(--secondary);font-size:0.72rem;"></i> Tube sheet drilling &amp; grooving</li>
+                    </ul>
+                </div>
+                <div style="background:linear-gradient(145deg,var(--off-white),var(--white));border-radius:var(--radius-lg);padding:36px;border-top:4px solid var(--primary-accent);box-shadow:var(--shadow-sm);">
+                    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+                        <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--primary-light),var(--primary));border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-cog" style="color:var(--white);font-size:1.15rem;"></i>
+                        </div>
+                        <h3 style="font-family:var(--font-heading);font-size:1.15rem;font-weight:700;color:var(--primary);margin:0;">Lathe Turning</h3>
+                    </div>
+                    <p style="font-size:0.93rem;color:var(--dark-gray);line-height:1.75;">
+                        Heavy-duty lathes for turning cylindrical components such as nozzles, stub ends, forged rings,
+                        and shafts used across all three product lines.
+                    </p>
+                    <ul style="sub-product-list;margin-top:14px;padding-left:0;list-style:none;">
+                        <li style="padding:6px 0 6px 20px;position:relative;font-size:0.88rem;color:var(--mid-gray);"><i class="fas fa-check" style="position:absolute;left:0;color:var(--primary-accent);font-size:0.72rem;"></i> Nozzle OD/ID turning to drawing specs</li>
+                        <li style="padding:6px 0 6px 20px;position:relative;font-size:0.88rem;color:var(--mid-gray);"><i class="fas fa-check" style="position:absolute;left:0;color:var(--primary-accent);font-size:0.72rem;"></i> Stub-end and collar machining</li>
+                        <li style="padding:6px 0 6px 20px;position:relative;font-size:0.88rem;color:var(--mid-gray);"><i class="fas fa-check" style="position:absolute;left:0;color:var(--primary-accent);font-size:0.72rem;"></i> Seal surface finish turning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WELDING SYSTEMS ==================== -->
+    <section class="section" style="background:var(--primary);color:var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color:var(--secondary);">Welding Capability</span>
+                <h2 style="color:var(--white);">Welding &amp; Assembly Equipment</h2>
+                <div class="section-line" style="background:rgba(247,147,30,0.4);"></div>
+                <p style="max-width:650px;margin:0 auto;color:rgba(255,255,255,0.78);font-size:1rem;line-height:1.7;">
+                    Weld quality is critical for ASME-coded pressure-retaining equipment. Our facility is equipped with
+                    advanced automated and manual welding systems operated by certified welders.
+                </p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+                <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="width:52px;height:52px;background:rgba(247,147,30,0.15);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                        <i class="fas fa-bolt" style="color:var(--secondary);font-size:1.25rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:12px;">Submerged Arc Welding (SAW)</h3>
+                    <p style="font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.75;">
+                        Automated SAW systems for longitudinal and circumferential seams on pressure vessel shells,
+                        HRSG casing panels, and thick plate butt joints. High deposition rate ensures efficiency
+                        while maintaining excellent mechanical properties.
+                    </p>
+                </div>
+                <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="width:52px;height:52px;background:rgba(247,147,30,0.15);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                        <i class="fas fa-fire-flame-curved" style="color:var(--secondary-light);font-size:1.25rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:12px;">Gas Tungsten Arc (GTAW/TIG)</h3>
+                    <p style="font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.75;">
+                        Manual and orbital GTAW for root passes on high-alloy and stainless steel welds,
+                        full-penetration welds on thin-wall tubing, and applications requiring highest-quality
+                        radiographic results per ASME requirements.
+                    </p>
+                </div>
+                <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="width:52px;height:52px;background:rgba(247,147,30,0.15);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                        <i class="fas fa-wand-magic-sparkles" style="color:#f0c060;font-size:1.25rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:12px;">Gas Metal Arc (GMAW/MIG)</h3>
+                    <p style="font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.75;">
+                        Semi-automatic GMAW for fillet welds, attachment welds, and structural connections
+                        throughout ACHE assemblies and module frameworks. Versatile process suitable for
+                        carbon steel and stainless materials.
+                    </p>
+                </div>
+                <div style="background:rgba(255,255,255,0.07);border-radius:var(--radius-lg);padding:32px;">
+                    <div style="width:52px;height:52px;background:rgba(247,147,30,0.15);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                        <i class="fas fa-microchip" style="color:var(--secondary);font-size:1.25rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:12px;">Automated Column &amp; Boom</h3>
+                    <p style="font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.75;">
+                        Welding manipulators (column-and-boom units) paired with rotators or positioners
+                        for consistent circumferential and longitudinal welds on vessel shells, headers,
+                        and cylindrical components.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SURFACE TREATMENT ==================== -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Surface Treatment</span>
+                <h2>Blasting, Coating &amp; Finishing</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <div class="cap-number">01</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-spray-can-sparkles"></i> Abrasive Blasting Chambers</h3>
+                        <p>Enclosed blasting booths for surface preparation to SSPC/NACE standards. Capable of achieving Sa 2.5 near-white blast cleanliness on carbon steel surfaces before coating application. Dust collection systems ensure environmental compliance.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">02</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-fill-drip"></i> Coating Application Facility</h3>
+                        <p>Dedicated climate-controlled coating bays with proper ventilation and humidity control for applying epoxy, zinc-rich primers, intermediate coats, and polyurethane topcoats per project specifications. Wet film and dry film thickness inspection capability.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">03</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-temperature-high"></i> Post-Weld Heat Treatment</h3>
+                        <p>Local PWHT equipment using electric heating elements and ceramic blanket insulation for stress relief of welded joints as required by ASME code and client specifications. Full documentation and temperature recording charts provided.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">04</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-ruler"></i> Dimensional Inspection Tools</h3>
+                        <p>Comprehensive metrology equipment including laser trackers, total stations, precision measuring tools, and templates for verifying geometric tolerances, alignment, and fit-up during assembly stages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Schedule a Facility Tour</h2>
+                <p>We welcome customers and partners to visit our facility and see our capabilities firsthand.</p>
+                <a href="mailto:info@m-energy.com" class="btn btn-primary btn-large">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/tablogo.png" alt="MEEM Logo" class="footer-logo" />
+                    <p>Modern Energy Equipment Manufacturing Co., Ltd. — The third manufacturing facility of Modern Group, dedicated to energy equipment fabrication excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#capabilities">Capabilities</a></li>
+                        <li><a href="index.html#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="heat-recovery.html">Heat Recovery Steam Generator</a></li>
+                        <li><a href="air-cooled.html">Air Cooled Heat Exchanger</a></li>
+                        <li><a href="pressure-vessels.html">Pressure Vessels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@m-energy.com">info@m-energy.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>1 Duanshan Road, Deji Subdistrict, Zhangjiagang City, Jiangsu Province 215635</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Modern Energy Equipment Manufacturing Co., Ltd. (MEEM). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

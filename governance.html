@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Governance &amp; Ethics | MEEM</title>
+    <meta name="description" content="MEEM operates under Modern Group's unified governance framework, ethical standards and compliance policies across all manufacturing entities.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .org-chart-wrapper { max-width: 900px; margin: 0 auto 40px; text-align: center; position: relative; }
+        .org-group {
+            display: inline-flex; align-items: center; gap: 16px;
+            padding: 18px 36px; background: var(--white); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        .org-group img { height: 48px; width: auto; }
+        .org-group h3 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin: 0; letter-spacing: 1px; }
+        .org-connector { position: relative; height: 60px; margin: 0 auto; width: 75%; max-width: 680px; }
+        .org-line-v { position: absolute; left: 50%; top: 0; width: 2px; height: 30px; background: var(--primary); transform: translateX(-50%); }
+        .org-line-h { position: absolute; left: 0; right: 0; top: 30px; height: 2px; background: var(--primary); }
+        .org-lines-down { position: absolute; top: 30px; left: 0; right: 0; height: 30px; display: flex; justify-content: space-between; }
+        .org-lines-down div { width: 2px; height: 30px; background: var(--primary); }
+        .org-subsidiaries { display: flex; justify-content: space-between; gap: 24px; max-width: 900px; margin: 0 auto 40px; }
+        .org-sub-box {
+            flex: 1; background: var(--white); padding: 26px 20px; border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm); text-align: center; border-top: 4px solid var(--secondary);
+            transition: var(--transition-normal);
+        }
+        .org-sub-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .org-sub-box h4 { color: var(--secondary); font-size: 1.55rem; font-weight: 700; margin-bottom: 8px; font-family: var(--font-heading); }
+        .org-sub-box p { color: var(--dark-gray); font-size: 0.85rem; line-height: 1.5; margin: 0; }
+        .org-unified-banner {
+            max-width: 900px; margin: 0 auto;
+            background: var(--primary); color: var(--white);
+            padding: 26px 36px; border-radius: var(--radius-lg); text-align: center;
+        }
+        .org-unified-banner p { font-style: italic; font-size: 1.05rem; line-height: 1.7; margin: 0; }
+        .org-unified-banner strong { color: var(--secondary); font-style: normal; }
+        @media (max-width: 768px) {
+            .org-subsidiaries { flex-direction: column; }
+            .org-connector { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left"><span><i class="fas fa-envelope"></i> info@m-energy.com</span></div>
+            <div class="top-bar-right"><a href="#contacts"><i class="fas fa-phone"></i> Contact Us</a></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="main-header scrolled" id="mainHeader">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/tablogo.png" alt="MEEM Logo" class="logo-img" />
+                    <span class="logo-sub">Modern Energy Equipment</span>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Homepage</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="active">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="sustainability.html">Sustainability</a></li>
+                            <li><a href="governance.html" style="color:var(--primary);font-weight:600;">Governance</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html#products">Products <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu dropdown-wide">
+                            <li><a href="heat-recovery.html">Heat Recovery Steam Generator</a></li>
+                            <li><a href="air-cooled.html">Air Cooled Heat Exchanger</a></li>
+                            <li><a href="pressure-vessels.html">Pressure Vessels</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html#capabilities">Capabilities <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="facility.html">Facility &amp; Equipment</a></li>
+                            <li><a href="laboratory.html">Laboratory</a></li>
+                            <li><a href="certifications.html">Certifications</a></li>
+                            <li><a href="project-gallery.html">Project Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contacts" class="btn-nav-contact">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="margin-top:75px;background:linear-gradient(135deg, var(--primary) 0%, #1e3a7a 40%, var(--primary-dark) 100%);padding:100px 0 70px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-50px;left:-50px;width:300px;height:300px;border-radius:50%;background:rgba(62,88,152,0.12);filter:blur(40px);"></div>
+        <div class="container" style="position:relative;z-index:2;">
+            <span style="display:inline-block;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--secondary);margin-bottom:12px;">Our Standards</span>
+            <h1 style="font-family:var(--font-heading);font-size:3rem;font-weight:800;color:var(--white);letter-spacing:-0.5px;margin-bottom:16px;">Corporate Governance</h1>
+            <p style="max-width:580px;margin:0 auto;font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.7;">Upholding transparency, accountability, and ethical standards in every facet of our business.</p>
+        </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section" style="background:var(--white);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Built on Integrity and Accountability</h3>
+                    <p>
+                        MEEM operates under a robust corporate governance framework that aligns with international
+                        best practices and the standards expected by our global customer base. As a member of
+                        the Modern Group's manufacturing network, we adhere to consistent governance policies
+                        that ensure transparency, ethical conduct, and regulatory compliance.
+                    </p>
+                    <p>
+                        Our governance structure covers quality assurance systems, supply chain ethics,
+                        data protection, anti-corruption measures, and continuous compliance monitoring
+                        across all business functions.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="images/governance.webp" alt="MEEM Corporate Standards" />
+                        <div class="image-caption">Governance &amp; Compliance Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GROUP ORGANIZATIONAL STRUCTURE -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Group Structure</span>
+                <h2>Modern Group Organization</h2>
+                <div class="section-line"></div>
+                <p style="max-width:650px;margin:0 auto;color:var(--mid-gray);font-size:1rem;line-height:1.7;">
+                    MEEM is one of three manufacturing entities under the Modern Group, all aligned under a shared leadership team and unified governance standards.
+                </p>
+            </div>
+
+            <div class="org-chart-wrapper">
+                <!-- Modern Group -->
+                <div class="org-group">
+                    <img src="images/tablogo.png" alt="Modern Group" />
+                    <h3>MODERN GROUP</h3>
+                </div>
+
+                <!-- Connecting Lines -->
+                <div class="org-connector">
+                    <div class="org-line-v"></div>
+                    <div class="org-line-h"></div>
+                    <div class="org-lines-down"><div></div><div></div><div></div></div>
+                </div>
+
+                <!-- Subsidiaries -->
+                <div class="org-subsidiaries">
+                    <div class="org-sub-box">
+                        <h4>MDHI</h4>
+                        <p>Modern Heavy Industries<br />(Taicang) Co., Ltd.</p>
+                    </div>
+                    <div class="org-sub-box">
+                        <h4>MMEC</h4>
+                        <p>Modern Modular E &amp; C<br />(Suzhou) Co., Ltd.</p>
+                    </div>
+                    <div class="org-sub-box">
+                        <h4>MEEM</h4>
+                        <p>Modern Energy Equipment<br />Manufacturing Co., Ltd.</p>
+                    </div>
+                </div>
+
+                <!-- Unified Governance Banner -->
+                <div class="org-unified-banner">
+                    <p>
+                        <strong>Led by the same executive team</strong> and governed by the Modern Group's unified code of conduct, ethical standards, and compliance policies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOVERNANCE PILLARS -->
+    <section class="section" style="background:var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Framework</span>
+                <h2>Governance Principles</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <div class="cap-number">01</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-balance-scale"></i> Quality Assurance &amp; Compliance</h3>
+                        <p>Rigorous QA/QC protocols governed by ASME code requirements and ISO 9001 standards. Independent third-party inspections, full material traceability, and documented procedures at every stage of fabrication from raw material receipt to final delivery.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">02</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-shield-alt"></i> Supply Chain Ethics</h3>
+                        <p>Comprehensive supplier qualification program including vendor audits, material source verification, and ethical sourcing guidelines. We only partner with suppliers who meet our standards for quality, reliability, and responsible business practices.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">03</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-user-shield"></i> Health, Safety &amp; Environment (HSE)</h3>
+                        <p>Dual certification under ISO 14001 (Environmental Management) and ISO 45001 (Occupational Health &amp; Safety). Regular internal and external audits, incident reporting systems, and continuous improvement initiatives driven by HSE performance metrics.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">04</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-file-contract"></i> Transparency &amp; Documentation</h3>
+                        <p>Complete project documentation packages including design calculations, material certificates (MTC), welding records, NDT reports, hydro-test results, and as-built documentation. Full digital archiving ensures long-term traceability for every vessel or module delivered.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">05</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-handshake"></i> Business Ethics &amp; Integrity</h3>
+                        <p>Zero-tolerance policy toward corruption, bribery, and conflicts of interest. Clear codes of conduct for employees, vendors, and partners. Confidentiality agreements and intellectual property protections in place for all customer projects.</p>
+                    </div>
+                </div>
+                <div class="capability-item">
+                    <div class="cap-number">06</div>
+                    <div class="cap-content">
+                        <h3><i class="fas fa-clipboard-check"></i> Risk Management</h3>
+                        <p>Proactive risk identification and mitigation framework covering technical risks (design changes, material availability), commercial risks (currency fluctuation, contract terms), and operational risks (capacity planning, workforce management).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATION BADGES REFERENCE -->
+    <section class="section" style="background:var(--primary);color:var(--white);">
+        <div class="container">
+            <div class="section-header light" style="margin-bottom:44px;">
+                <span class="section-tag">Certified Standards</span>
+                <h2>Governed by Global Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center;">
+                <div style="padding:24px 18px;background:rgba(255,255,255,0.06);border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-certificate" style="color:var(--secondary);font-size:2rem;margin-bottom:12px;display:block;"></i>
+                    <strong style="font-size:0.95rem;color:var(--white);">ASME S Stamp</strong>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:6px;">Power Boiler Fabrication</p>
+                </div>
+                <div style="padding:24px 18px;background:rgba(255,255,255,0.06);border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-certificate" style="color:var(--secondary);font-size:2rem;margin-bottom:12px;display:block;"></i>
+                    <strong style="font-size:0.95rem;color:var(--white);">ASME U Stamp</strong>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:6px;">Pressure Vessel Fabrication</p>
+                </div>
+                <div style="padding:24px 18px;background:rgba(255,255,255,0.06);border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-certificate" style="color:var(--secondary);font-size:2rem;margin-bottom:12px;display:block;"></i>
+                    <strong style="font-size:0.95rem;color:var(--white);">ASME PP Stamp</strong>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:6px;">Pressure Piping Assembly</p>
+                </div>
+                <div style="padding:24px 18px;background:rgba(255,255,255,0.06);border-radius:var(--radius-md);border:1px solid rgba(255,255,255,0.1);">
+                    <i class="fas fa-certificate" style="color:var(--secondary);font-size:2rem;margin-bottom:12px;display:block;"></i>
+                    <strong style="font-size:0.95rem;color:var(--white);">ISO 9001 / 14001 / 45001</strong>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-top:6px;">QMS / EMS / OHSMS</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:32px;">
+                <a href="certifications.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.92rem;font-weight:600;color:var(--secondary);">
+                    View Full Certification Details <i class="fas fa-arrow-right" style="font-size:0.75rem;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Questions About Our Standards?</h2>
+                <p>We welcome inquiries about our governance practices, certifications, and compliance procedures.</p>
+                <a href="mailto:info@m-energy.com" class="btn btn-primary btn-large"><i class="fas fa-envelope"></i> Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/tablogo.png" alt="MEEM Logo" class="footer-logo" />
+                    <p>Modern Energy Equipment Manufacturing Co., Ltd. — Delivering customized solutions for traditional and non-traditional energy projects through high-tech professional manufacturing.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#capabilities">Capabilities</a></li>
+                        <li><a href="index.html#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="heat-recovery.html">Heat Recovery Steam Generator</a></li>
+                        <li><a href="air-cooled.html">Air Cooled Heat Exchanger</a></li>
+                        <li><a href="pressure-vessels.html">Pressure Vessels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@m-energy.com">info@m-energy.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>1 Duanshan Road, Deji Subdistrict, Zhangjiagang City, Jiangsu Province 215635</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Modern Energy Equipment Manufacturing Co., Ltd. (MEEM). All Rights Reserved.</p></div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

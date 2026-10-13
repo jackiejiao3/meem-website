@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEEM Strategic Locations - Interactive Map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a2463 0%, #1565c0 50%, #0d47a1 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .page-header {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .map-section {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .map-title-bar {
+            background: linear-gradient(135deg, #1565c0, #0d47a1);
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .map-title-bar h2 {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .map-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .map-hint-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.8);
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .map-hint-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+        }
+
+        /* Map Image Container */
+        .map-container {
+            padding: 24px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .map-container:hover {
+            background: #f8fafc;
+        }
+
+        .map-image-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .map-container:hover .map-image-wrapper {
+            box-shadow: 0 8px 32px rgba(21,101,192,0.18);
+        }
+
+        .map-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .map-container:hover .map-image-wrapper img {
+            transform: scale(1.01);
+        }
+
+        .zoom-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(13,71,161,0.9);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+
+        .map-container:hover .zoom-badge {
+            background: #1565c0;
+            transform: translateY(-2px);
+        }
+
+        .map-caption {
+            padding: 16px 24px 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            border-top: 1px solid #eee;
+        }
+
+        /* Location Cards */
+        .location-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 36px;
+        }
+
+        .location-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .location-card:nth-child(1) { border-left-color: #e74c3c; }   /* MDHI */
+        .location-card:nth-child(2) { border-left-color: #3498db; }  /* MMEC */
+        .location-card:nth-child(3) { border-left-color: #27ae60; }  /* MEEM */
+        .location-card:nth-child(4) { border-left-color: #f39c12; }  /* MME */
+
+        .location-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .location-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+        }
+
+        .location-card:nth-child(1) .location-card-icon { background: rgba(231,76,60,0.1); }
+        .location-card:nth-child(2) .location-card-icon { background: rgba(52,152,219,0.1); }
+        .location-card:nth-child(3) .location-card-icon { background: rgba(39,174,96,0.1); }
+        .location-card:nth-child(4) .location-card-icon { background: rgba(243,156,18,0.1); }
+
+        .location-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+
+        .location-card p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.55;
+        }
+
+        /* ===== LIGHTBOX / FULLSCREEN ZOOM ===== */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.88);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 95vw;
+            max-height: 95vh;
+            transform: scale(0.9);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .lightbox-overlay.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-content img {
+            max-width: 100vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+            user-select: none;
+            -webkit-user-drag: none;
+            cursor: grab;
+        }
+
+        .lightbox-content img:active {
+            cursor: grabbing;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 24px;
+            right: 28px;
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-info {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13,71,161,0.9);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+            z-index: 10000;
+        }
+
+        /* Zoom Controls */
+        .zoom-controls {
+            position: fixed;
+            bottom: 80px;
+            right: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10000;
+        }
+
+        .zoom-btn {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .zoom-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .zoom-level {
+            position: fixed;
+            bottom: 180px;
+            right: 28px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            z-index: 10000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 1.5rem; }
+            .map-title-bar { flex-direction: column; gap: 10px; text-align: center; }
+            .map-container { padding: 16px; }
+            .location-cards { grid-template-columns: 1fr; }
+            .zoom-controls { bottom: 70px; right: 16px; }
+            .zoom-btn { width: 38px; height: 38px; }
+            .lightbox-info { font-size: 0.78rem; padding: 8px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="page-header">
+        <h1>Strategic Locations & Transport Hubs</h1>
+        <p>Modern Group — Four Manufacturing Sites in the Yangtze River Delta</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Interactive Map Section -->
+        <section class="map-section" id="mapSection">
+            <div class="map-title-bar">
+                <h2>Four Strategic Sites & Nearby Transport Hubs</h2>
+                <div class="map-hint">
+                    <div class="map-hint-icon"></div>
+                    Click map to explore in detail
+                </div>
+            </div>
+
+            <div class="map-container" onclick="openLightbox()" title="Click to view full size with zoom">
+                <div class="map-image-wrapper">
+                    <img src="images/location_map.jpg" alt="MEEM Four Strategic Sites & Nearby Transport Hubs Map" />
+                    <div class="zoom-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        Click to Enlarge &amp; Zoom
+                    </div>
+                </div>
+            </div>
+            <div class="map-caption">
+                Interactive location map showing Modern Group's four manufacturing facilities along the Yangtze River corridor,
+                with key transport hubs including Shanghai Pudong/Hongqiao Airports, major ports (Zhangjiagang, Taicang, Nantong),
+                and high-speed rail connections for efficient global logistics.
+            </div>
+        </section>
+
+        <!-- Location Summary Cards -->
+        <div class="location-cards">
+            <div class="location-card">
+                <div class="location-card-icon">&#127961;</div>
+                <h3>MDHI — Daxin Site</h3>
+                <p>Daxin Town, Zhangjiagang<br>Focused on heat exchanger R&amp;D &amp; precision fabrication.</p>
+            </div>
+            <div class="location-card">
+                <div class="location-card-icon">&#127974;</div>
+                <h3>MMEC — Engineering Center</h3>
+                <p>Zhangjiagang City<br>Engineering design, project management &amp; technical support hub.</p>
+            </div>
+            <div class="location-card">
+                <div class="location-card-icon">&#127981;</div>
+                <h3>MEEM — Deji Site</h3>
+                <p>Deji Subdistrict, Zhangjiagang<br>Main manufacturing base for HRSG, pressure vessels &amp; ACHE products.</p>
+            </div>
+            <div class="location-card">
+                <div class="location-card-icon">&#9881;</div>
+                <h3>MME — Equipment Division</h3>
+                <p>Zhangjiagang City<br>Specialized equipment manufacturing &amp; assembly operations.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOnBg(event)">
+        <button class="lightbox-close" onclick="closeLightbox()" title="Close (Esc)">✕</button>
+
+        <div class="zoom-level" id="zoomLevel">100%</div>
+
+        <div class="zoom-controls">
+            <button class="zoom-btn" onclick="zoomIn(event)" title="Zoom In (+)">+</button>
+            <button class="zoom-btn" onclick="zoomOut(event)" title="Zoom Out (−)">−</button>
+            <button class="zoom-btn" onclick="resetZoom(event)" title="Reset View">&#8634;</button>
+        </div>
+
+        <div class="lightbox-content" id="lightboxContent">
+            <img src="images/location_map.jpg" alt="MEEM Location Map Full Size" id="lightboxImg" />
+        </div>
+
+        <div class="lightbox-info">
+            &#128270; Scroll to zoom &nbsp;&bull;&nbsp; Drag to pan &nbsp;&bull;&nbsp; Press Esc to close
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxContent = document.getElementById('lightboxContent');
+        const zoomLevelDisplay = document.getElementById('zoomLevel');
+
+        let currentZoom = 1;
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0, translateY = 0;
+
+        function openLightbox() {
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            resetZoomState();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            // Delayed reset for smooth exit animation
+            setTimeout(resetZoomState, 350);
+        }
+
+        function closeLightboxOnBg(e) {
+            if (e.target === lightbox) closeLightbox();
+        }
+
+        function resetZoomState() {
+            currentZoom = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        }
+
+        function applyZoom(newZoom) {
+            currentZoom = Math.max(0.5, Math.min(5, newZoom));
+            updateTransform();
+        }
+
+        function zoomIn(e) {
+            if (e) e.stopPropagation();
+            applyZoom(currentZoom + 0.3);
+        }
+
+        function zoomOut(e) {
+            if (e) e.stopPropagation();
+            applyZoom(currentZoom - 0.3);
+        }
+
+        function resetZoom(e) {
+            if (e) e.stopPropagation();
+            resetZoomState();
+        }
+
+        function updateTransform() {
+            lightboxImg.style.transform = `scale(${currentZoom}) translate(${translateX}px, ${translateY}px)`;
+            zoomLevelDisplay.textContent = Math.round(currentZoom * 100) + '%';
+        }
+
+        // Scroll wheel zoom
+        lightbox.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? -0.15 : 0.15;
+            applyZoom(currentZoom + delta);
+        }, { passive: false });
+
+        // Drag to pan
+        lightboxImg.addEventListener('mousedown', function(e) {
+            if (currentZoom > 1) {
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                lightboxImg.style.cursor = 'grabbing';
+            }
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            lightboxImg.style.cursor = currentZoom > 1 ? 'grab' : 'default';
+        });
+
+        // Touch support
+        let touchStartDist = 0;
+        let touchStartZoom = 1;
+
+        lightboxImg.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 2) {
+                touchStartDist = getTouchDistance(e.touches);
+                touchStartZoom = currentZoom;
+            } else if (e.touches.length === 1 && currentZoom > 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX - translateX;
+                startY = e.touches[0].clientY - translateY;
+            }
+        }, { passive: true });
+
+        lightboxImg.addEventListener('touchmove', function(e) {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const dist = getTouchDistance(e.touches);
+                applyZoom(touchStartZoom * (dist / touchStartDist));
+            } else if (e.touches.length === 1 && isDragging) {
+                translateX = e.touches[0].clientX - startX;
+                translateY = e.touches[0].clientY - startY;
+                updateTransform();
+            }
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchend', function() {
+            isDragging = false;
+        });
+
+        function getTouchDistance(touches) {
+            const dx = touches[0].clientX - touches[1].clientX;
+            const dy = touches[0].clientY - touches[1].clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('active')) return;
+            switch(e.key) {
+                case 'Escape': closeLightbox(); break;
+                case '+': case '=': zoomIn(); break;
+                case '-': zoomOut(); break;
+                case '0': resetZoom(); break;
+            }
+        });
+    </script>
+
+</body>
+</html>
