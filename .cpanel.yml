@@ -1,7 +1,6 @@
-
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/mdhiglob/public_html/deploy-test-meem/
-    - /bin/mkdir -p "$DEPLOYPATH"
-    - /bin/tar --exclude=.git --exclude=.cpanel.yml -cf - . | /bin/tar -xf - -C "$DEPLOYPATH"
+    - export DEPLOYPATH=/home1/mdhiglob/deploy-test-meem/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp Index.html $DEPLOYPATH
