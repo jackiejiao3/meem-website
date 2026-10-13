@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home1/mdhiglob/deploy-test-meem/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp Index.html $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
