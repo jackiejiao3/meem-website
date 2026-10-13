@@ -1,6 +1,9 @@
+
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/mdhiglob/deploy-test-meem/
-    - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
+    - export DEPLOYPATH=/home1/mdhiglob/public_html/menergy/
+    - /bin/cp index.html "$DEPLOYPATH"
+    - /bin/cp -R css/. "$DEPLOYPATH/css/"
+    - /bin/cp -R js/. "$DEPLOYPATH/js/"
+    - /bin/cp -R images/. "$DEPLOYPATH/images/"
