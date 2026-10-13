@@ -2,5 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/mdhiglob/public_html/menergy/
-    - /bin/mkdir -p "$DEPLOYPATH"
-    - /usr/bin/rsync -av --exclude='.git/' --exclude='.github/' --exclude='.cpanel.yml' --exclude='.gitignore' ./ "$DEPLOYPATH"
+    - /bin/rsync -rv --no-perms --omit-dir-times --exclude='.git/' --exclude='.github/' --exclude='.cpanel.yml' --exclude='.gitignore' --exclude='.env' --exclude='*.log' ./ "$DEPLOYPATH"
