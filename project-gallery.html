@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @media (max-width: 768px) {
+            .water-seal-gallery-image { transform: none !important; }
+        }
+    </style>
 </head>
 <body>
 
@@ -208,7 +213,7 @@
                 </div>
                 <div style="background:linear-gradient(145deg,var(--off-white),var(--white));border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);border-top:4px solid var(--primary-light);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
                     <div style="height:200px;background:linear-gradient(135deg,#0d47a1,#29b6f6);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-                        <img src="images/project-enclosed-ache.webp" alt="Enclosed heat exchanger equipment with louver panels and yellow access platforms" width="1440" height="1600" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--off-white);" />
+                        <img src="images/project-enclosed-ache-landscape.webp" alt="Enclosed heat exchanger equipment with louver panels and yellow access platforms" width="1600" height="914" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
                         <div style="position:absolute;bottom:14px;left:18px;">
                             <span style="background:var(--primary-light);color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Enclosed ACHE</span>
                         </div>
@@ -278,7 +283,7 @@
                 </div>
                 <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
                     <div style="height:280px;background:linear-gradient(135deg,#0d1642,#283593);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-                        <img src="images/project-water-seal-drum.webp" alt="Horizontal water seal drum with connection nozzles and vessel supports in an outdoor fabrication area" width="1448" height="1086" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;" />
+                        <img class="water-seal-gallery-image" src="images/project-water-seal-drum.webp" alt="Horizontal water seal drum with connection nozzles and vessel supports in an outdoor fabrication area" width="1448" height="1086" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--off-white);transform:scale(1.45);transform-origin:center;" />
                         <div style="position:absolute;bottom:14px;left:18px;">
                             <span style="background:#303f9f;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Water Seal Drum</span>
                         </div>
