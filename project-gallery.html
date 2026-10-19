@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @media (max-width: 768px) {
+            .hrsg-gallery-grid { grid-template-columns: minmax(0, 1fr) !important; }
+        }
+        @media (max-width: 768px) {
             .water-seal-gallery-image { transform: none !important; }
         }
     </style>
@@ -120,7 +123,45 @@
                 <h2>HRSG &amp; Boiler Component Deliveries</h2>
                 <div class="section-line"></div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:26px;">
+            <div class="hrsg-gallery-grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;">
+                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="height:200px;background:linear-gradient(135deg,#0d3b6e,#1976d2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+                        <img src="images/project-header-packages.webp" alt="Drilled cylindrical components arranged on supports beneath an overhead crane" width="1446" height="1088" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 85%;" />
+                        <div style="position:absolute;bottom:14px;left:18px;">
+                            <span style="background:var(--primary-accent);color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Headers</span>
+                        </div>
+                    </div>
+                    <div style="padding:26px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Header Fabrication</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
+                            Fabrication of HRSG headers with tube connection openings, prepared for subsequent tube-to-header assembly.
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Header Fabrication</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Tube Connections</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Assembly Preparation</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="height:200px;background:linear-gradient(135deg,#103c6e,#1e88e5);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+                        <img src="images/project-hrsg-finned-tubes.webp" alt="Rows of finned tubes arranged on factory handling equipment" width="1447" height="1087" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;" />
+                        <div style="position:absolute;bottom:14px;left:18px;">
+                            <span style="background:#e65100;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Finned Tubes</span>
+                        </div>
+                    </div>
+                    <div style="padding:26px;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Finned Tube Manufacturing</h3>
+                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
+                            Manufacture of finned tubes for HRSG heat-transfer sections, with tube and fin configurations specified to suit project requirements.
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Finned Tubes</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Heat-Transfer Sections</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Project Specifications</span>
+                        </div>
+                    </div>
+                </div>
                 <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
                     <div style="height:200px;background:linear-gradient(135deg,#0a2463,#1565c0);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
                         <img src="images/project-hrsg-harp-platen-clean.webp" alt="Welder joining a cylindrical header to a finned tube assembly in the factory" width="1447" height="1087" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;" />
@@ -129,9 +170,9 @@
                         </div>
                     </div>
                     <div style="padding:26px;">
-                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">HRSG Harp &amp; Platen Assemblies</h3>
+                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Harp &amp; Platen Assembly</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
-                            Shop-fabricated harp and platen assemblies integrate finned tubes with headers to form HRSG heat-transfer sections, ready for module integration.
+                            Assembly and welding of finned tubes to headers to form harp and platen sections for integration into HRSG modules.
                         </p>
                         <div style="display:flex;flex-wrap:wrap;gap:8px;">
                             <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Tube-to-Header</span>
@@ -141,40 +182,21 @@
                     </div>
                 </div>
                 <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
-                    <div style="height:200px;background:linear-gradient(135deg,#0d3b6e,#1976d2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-                        <img src="images/project-header-packages.webp" alt="Drilled cylindrical components arranged on supports beneath an overhead crane" width="1446" height="1088" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 85%;" />
-                        <div style="position:absolute;bottom:14px;left:18px;">
-                            <span style="background:var(--primary-accent);color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Header</span>
-                        </div>
-                    </div>
-                    <div style="padding:26px;">
-                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">HRSG Header Fabrication</h3>
-                        <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
-                            Drilled headers for tube connections and assembly integration. Shop fabrication prepares these components for the next stage of HRSG manufacturing.
-                        </p>
-                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
-                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Drilled Headers</span>
-                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Tube Connections</span>
-                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Header Components</span>
-                        </div>
-                    </div>
-                </div>
-                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
                     <div style="height:200px;background:linear-gradient(135deg,#103c6e,#1e88e5);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-                        <img src="images/project-process-air-coolers.webp" alt="Stacked finned tube bundles with connected headers and support frames" width="1448" height="1086" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;" />
+                        <span style="color:var(--white);font-size:0.95rem;letter-spacing:0.04em;">Module assembly photo pending</span>
                         <div style="position:absolute;bottom:14px;left:18px;">
-                            <span style="background:#e65100;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Finned Tube Bundle</span>
+                            <span style="background:#e65100;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Module Assembly</span>
                         </div>
                     </div>
                     <div style="padding:26px;">
-                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Finned Tube Bundle Assemblies</h3>
+                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">HRSG Module Assembly</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
-                            Finned tube bundles with connected headers and support frames, prepared as integrated assemblies for incorporation into engineered heat-exchange equipment.
+                            Integration of harp and platen sections into HRSG modules, with alignment and assembly carried out to project drawings.
                         </p>
                         <div style="display:flex;flex-wrap:wrap;gap:8px;">
-                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Finned Tubes</span>
-                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Connected Headers</span>
-                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Support Frames</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Module Integration</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Alignment</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Project Drawings</span>
                         </div>
                     </div>
                 </div>
