@@ -12,17 +12,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .air-project-grid { display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:26px; }
-        .air-project-card { grid-column:span 2; }
-        .air-project-card:nth-child(4) { grid-column:2 / span 2; }
-        .air-project-card:nth-child(5) { grid-column:4 / span 2; }
-        @media (max-width:1100px) {
+        .air-project-card { grid-column:span 2;display:flex;flex-direction:column; }
+        .air-project-card:nth-child(-n+2) { grid-column:span 3; }
+        .air-project-copy { display:flex;flex-direction:column;flex:1; }
+        .air-project-tags { margin-top:auto;padding-top:14px; }
+        @media (max-width:1000px) {
             .air-project-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
-            .air-project-card:nth-child(4) { grid-column:auto / span 2; }
-            .air-project-card:nth-child(5) { grid-column:2 / span 2; }
+            .air-project-card, .air-project-card:nth-child(-n+2) { grid-column:span 2; }
+            .air-project-card:last-child { grid-column:2 / span 2; }
         }
         @media (max-width:700px) {
             .air-project-grid { grid-template-columns:minmax(0,1fr); }
-            .air-project-card, .air-project-card:nth-child(4), .air-project-card:nth-child(5) { grid-column:auto; }
+            .air-project-card, .air-project-card:nth-child(-n+2), .air-project-card:last-child { grid-column:auto; }
         }
         @media (max-width: 768px) {
             .hrsg-gallery-grid { grid-template-columns: minmax(0, 1fr) !important; }
@@ -179,7 +180,7 @@
                     <div style="height:240px;background:linear-gradient(135deg,#0a2463,#1565c0);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
                         <img src="images/project-hrsg-harp-platen-welding.webp" alt="Welder working on a header connection during HRSG harp and platen assembly" width="1447" height="1087" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;" />
                         <div style="position:absolute;bottom:14px;left:18px;">
-                            <span style="background:var(--secondary);color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Harp &amp; Platen</span>
+                            <span style="background:#52614a;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Harp &amp; Platen</span>
                         </div>
                     </div>
                     <div style="padding:26px;">
@@ -198,7 +199,7 @@
                     <div style="height:240px;background:linear-gradient(135deg,#103c6e,#1e88e5);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
                         <img src="images/project-hrsg-module-assembly.webp" alt="Rows of HRSG module assemblies held in yellow frames inside the workshop" width="1600" height="941" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 72%;" />
                         <div style="position:absolute;bottom:14px;left:18px;">
-                            <span style="background:#e65100;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Module Assembly</span>
+                            <span style="background:#78642e;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Module Assembly</span>
                         </div>
                     </div>
                     <div style="padding:26px;">
@@ -226,49 +227,89 @@
                 <div class="section-line"></div>
             </div>
             <div class="air-project-grid">
-                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border-top:4px solid #1976a3;">
+                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
                     <div style="aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--off-white);">
-                        <img src="images/project-modular-ache.webp" alt="Air fin cooler assembly with finned tube sections, headers and steel supports" width="1446" height="1087" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+                        <img src="images/project-modular-ache.webp" alt="Air fin cooler assembly with finned tube sections, headers and steel supports" width="1446" height="1087" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.28) translate(5%,-2%);transform-origin:center;" />
+                        <div style="position:absolute;bottom:14px;left:18px;right:12px;">
+                            <span style="display:inline-block;background:#1976a3;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Air Finned Cooler</span>
+                        </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Air Finned Cooler</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin:0;">Compact air-cooled finned tube units designed for general-purpose process cooling across oil &amp; gas, petrochemical, chemical processing, and power generation industries.</p>
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Process Cooling</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Finned Tubes</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Industrial Applications</span>
+                        </div>
                     </div>
                 </article>
-                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border-top:4px solid #466977;">
+                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
                     <div style="aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--off-white);">
-                        <img src="images/project-modular-air-cooled-exchanger.webp" alt="Modular air cooled heat exchanger with service platform, handrails and fan housings" width="1440" height="1080" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+                        <img src="images/project-modular-air-cooled-exchanger.webp" alt="Modular air cooled heat exchanger with service platform, handrails and fan housings" width="1440" height="1080" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:translateY(-2%) scale(1.05);transform-origin:center;" />
+                        <div style="position:absolute;bottom:14px;left:18px;right:12px;">
+                            <span style="display:inline-block;background:#466977;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Modular ACHE</span>
+                        </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Modular Air Cooled Heat Exchanger</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin:0;">Pre-engineered modular ACHE units designed for quick deployment, simplified logistics, and easy maintenance access. Ideal for brownfield expansions and phased commissioning projects.</p>
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Modular Design</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Maintenance Access</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Phased Commissioning</span>
+                        </div>
                     </div>
                 </article>
-                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border-top:4px solid #334d78;">
+                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
                     <div style="aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--off-white);">
-                        <img src="images/project-enclosed-afc-panorama.webp" alt="Enclosed air cooled heat exchanger with airflow louvers and yellow service platforms" width="2000" height="674" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+                        <img src="images/project-enclosed-afc-panorama.webp" alt="Enclosed air cooled heat exchanger with airflow louvers and yellow service platforms" width="2000" height="674" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:46% center;" />
+                        <div style="position:absolute;bottom:14px;left:18px;right:12px;">
+                            <span style="display:inline-block;background:#334d78;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Hot Air Recirculation</span>
+                        </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Hot Air Recirculation ACHE</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin:0;">Specially engineered ACHE units featuring hot air recirculation prevention features — designed for extreme ambient environments where anti-freezing performance is challenging.</p>
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Engineered ACHE</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Extreme Ambient</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Anti-Freezing</span>
+                        </div>
                     </div>
                 </article>
-                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border-top:4px solid #9b6b32;">
+                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
                     <div style="aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--off-white);">
-                        <img src="images/project-air-heater-background-43.webp" alt="Skid-mounted air heater with coil sections and circular duct connections" width="1440" height="1080" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+                        <img src="images/project-air-heater-background-43.webp" alt="Skid-mounted air heater with coil sections and circular duct connections" width="1440" height="1080" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:translateY(-1%) scale(1.025);transform-origin:center;" />
+                        <div style="position:absolute;bottom:14px;left:18px;right:12px;">
+                            <span style="display:inline-block;background:#9b6b32;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Air Heater</span>
+                        </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Skid-Mounted Air Heaters</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin:0;">Skid-mounted air heaters use steam or other high-temperature media to heat process air. Designed to API 661 for oil &amp; gas, LNG and industrial applications.</p>
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">API 661</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Skid-Mounted</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Process Air Heating</span>
+                        </div>
                     </div>
                 </article>
-                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border-top:4px solid #286d65;">
+                <article class="air-project-card" style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);">
                     <div style="aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--off-white);">
-                        <img src="images/project-tube-bundle-finned-elements.webp" alt="Heat exchanger tube bundle header with circular plugs and flanged connections" width="1440" height="1080" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+                        <img src="images/project-tube-bundle-finned-elements.webp" alt="Heat exchanger tube bundle header with circular plugs and flanged connections" width="1440" height="1080" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:translateY(-4%) scale(1.08);transform-origin:center;" />
+                        <div style="position:absolute;bottom:14px;left:18px;right:12px;">
+                            <span style="display:inline-block;background:#286d65;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Tube Bundle Elements</span>
+                        </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Tube Bundle &amp; Finned Tube Elements</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin:0;">OEM-quality replacement tube bundles and individual finned tube elements for existing ACHE units requiring refurbishment or performance restoration. Drop-in replacements that fit original equipment dimensions.</p>
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Replacement Bundles</span>
+                            <span style="background:rgba(247,147,30,0.1);color:var(--secondary-dark);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Finned Tube Elements</span>
+                            <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Refurbishment</span>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -284,38 +325,38 @@
                 <div class="section-line"></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:26px;">
-                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
-                    <div style="height:280px;background:linear-gradient(135deg,#1a237e,#3949ab);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);display:flex;flex-direction:column;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#1a237e,#3949ab);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
                         <img src="images/project-stainless-steel-vessel.webp" alt="Horizontal stainless steel vessel with formed heads and circumferential weld seams" width="1600" height="900" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--off-white);" />
                         <div style="position:absolute;bottom:14px;left:18px;">
                             <span style="background:var(--primary-dark);color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Stainless Steel Vessels</span>
                         </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Stainless Steel Knockout Drums &amp; Separators</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
                             Stainless steel knockout drums, liquid seal vessels and separators, fabricated to project-specific requirements for integration into industrial process systems.
                         </p>
-                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
                             <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Stainless Steel</span>
                             <span style="background:rgba(57,73,171,0.12);color:#3949ab;padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Knockout Drums</span>
                             <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Separators</span>
                         </div>
                     </div>
                 </div>
-                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
-                    <div style="height:280px;background:linear-gradient(135deg,#0d1642,#283593);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-                        <img class="water-seal-gallery-image" src="images/project-water-seal-drum.webp" alt="Horizontal water seal drum with connection nozzles and vessel supports in an outdoor fabrication area" width="1448" height="1086" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--off-white);transform:scale(1.45);transform-origin:center;" />
+                <div style="background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition-normal);display:flex;flex-direction:column;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--shadow-sm)'">
+                    <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#0d1642,#283593);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+                        <img class="water-seal-gallery-image" src="images/project-water-seal-drum.webp" alt="Horizontal water seal drum with connection nozzles and vessel supports in an outdoor fabrication area" width="1448" height="1086" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--off-white);transform:scale(1.08);transform-origin:center;" />
                         <div style="position:absolute;bottom:14px;left:18px;">
                             <span style="background:#303f9f;color:var(--white);padding:4px 12px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Water Seal Drum</span>
                         </div>
                     </div>
-                    <div style="padding:26px;">
+                    <div class="air-project-copy" style="padding:26px;">
                         <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:10px;">Water Seal Drums</h3>
                         <p style="font-size:0.9rem;color:var(--dark-gray);line-height:1.7;margin-bottom:14px;">
                             Water seal drums for industrial gas-handling systems, with fabricated vessel bodies, connection nozzles and supports configured to project requirements.
                         </p>
-                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                        <div class="air-project-tags" style="display:flex;flex-wrap:wrap;gap:8px;">
                             <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Water Seal</span>
                             <span style="background:rgba(48,63,159,0.12);color:#3949ab;padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Connection Nozzles</span>
                             <span style="background:rgba(10,36,99,0.08);color:var(--primary);padding:3px 10px;border-radius:4px;font-size:0.76rem;font-weight:500;">Vessel Supports</span>
