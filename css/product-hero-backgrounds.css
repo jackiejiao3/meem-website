@@ -1,0 +1,22 @@
+/* Product-based photographic hero backgrounds. */
+.product-photo-hero {
+ background-image:linear-gradient(180deg,rgba(3,15,34,.12),rgba(3,15,34,.2)),var(--product-hero-image) !important;
+ background-size:cover !important;
+ background-position:center !important;
+ background-repeat:no-repeat !important;
+ background-attachment:scroll !important;
+}
+.page-hero.product-photo-hero {
+ min-height:clamp(360px,33.333vw,560px);
+ display:flex;align-items:center;justify-content:center;
+ padding:80px 0 68px !important;
+}
+.product-photo-hero h1 { text-shadow:0 2px 22px rgba(0,0,0,.55); }
+.product-photo-hero p { text-shadow:0 1px 12px rgba(0,0,0,.7); }
+.hero.product-photo-hero .hero-overlay {
+ background:linear-gradient(90deg,rgba(3,15,34,.72),rgba(3,15,34,.35) 58%,rgba(3,15,34,.08));
+}
+@media(max-width:700px) {
+ .page-hero.product-photo-hero { min-height:340px;padding:76px 0 54px !important; }
+ .page-hero.product-photo-hero h1 { font-size:clamp(1.9rem,7vw,2.6rem) !important; }
+}
