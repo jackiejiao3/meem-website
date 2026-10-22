@@ -1,6 +1,6 @@
 /* Product-based photographic hero backgrounds with a contrast-safe text layer. */
 .product-photo-hero {
- background-image:radial-gradient(ellipse at 50% 45%,rgba(3,15,34,.22),rgba(3,15,34,0) 72%),linear-gradient(180deg,rgba(3,15,34,.64),rgba(3,15,34,.70)),var(--product-hero-image) !important;
+ background-image:radial-gradient(ellipse at 50% 45%,rgba(12,17,23,.16),rgba(12,17,23,0) 72%),linear-gradient(180deg,rgba(12,17,23,.40),rgba(12,17,23,.46)),var(--product-hero-image) !important;
  background-size:cover !important;
  background-position:center !important;
  background-repeat:no-repeat !important;
