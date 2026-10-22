@@ -101,6 +101,10 @@
         }
         #heat-recovery .product-card-image img { object-position:center 72%; transform:scale(1.2); transform-origin:center 72%; }
         #heat-recovery:hover .product-card-image img { transform:scale(1.25); }
+        #heat-recovery .header-piping-label { display:flex; flex-direction:column; gap:3px; line-height:1.45; }
+        #heat-recovery .header-piping-label > span { display:block; }
+        #heat-recovery .piping-label { font-size:0.9em; font-weight:600; color:#c9d5e9; }
+        #heat-recovery .header-piping-item > i { align-self:center; flex-shrink:0; }
     </style>
     <link rel="stylesheet" href="css/product-hero-backgrounds.css?v=20261022-balanced">
 </head>
@@ -256,7 +260,7 @@
                     <p>Complete HRSG module solutions for combined-cycle and conventional power plants — from finned tubes and headers to shop-assembled modules.</p>
                     <ul class="sub-product-list compact">
                         <li><i class="fas fa-grip-lines"></i> <span>Finned Tubes</span></li>
-                        <li><i class="fas fa-arrows-alt-h"></i> <span>Headers &amp; Manifolds / Piping Spools</span></li>
+                        <li class="header-piping-item"><i class="fas fa-arrows-alt-h"></i> <span class="header-piping-label"><span>Headers &amp; Manifolds</span><span class="piping-label">/ Piping Spools</span></span></li>
                         <li><i class="fas fa-stream"></i> <span>Harps / Platens</span></li>
                         <li><i class="fas fa-cubes"></i> <span>Bundles / Modules</span></li>
                     </ul>
