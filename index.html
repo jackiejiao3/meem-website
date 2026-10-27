@@ -99,7 +99,16 @@
             .lb-zoom-btn{width:38px;height:38px;}
             .lb-info-bar{font-size:0.75rem;padding:7px 16px;}
         }
+        #heat-recovery .product-card-image img { object-position:center 65%; transform:scale(1); transform-origin:center 65%; }
+        #heat-recovery:hover .product-card-image img { transform:scale(1.05); }
+        #heat-recovery .header-piping-label { display:flex; flex-direction:column; gap:3px; line-height:1.45; }
+        #heat-recovery .header-piping-label > span { display:block; }
+        #products .sub-product-list.compact li { font-size:0.86rem; font-weight:600; line-height:1.45; }
+        #products .sub-product-list.compact li span { font-size:inherit; font-weight:inherit; line-height:inherit; }
+        #heat-recovery .piping-label { font-size:inherit; font-weight:inherit; color:inherit; }
+        #heat-recovery .header-piping-item > i { align-self:center; flex-shrink:0; }
     </style>
+    <link rel="stylesheet" href="css/product-hero-backgrounds.css?v=20261022-balanced">
 </head>
 <body>
 
@@ -158,6 +167,7 @@
                         <a href="#capabilities">Capabilities <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="facility.html">Facility &amp; Equipment</a></li>
+                            
                             <li><a href="laboratory.html">Laboratory</a></li>
                             <li><a href="certifications.html">Certifications</a></li>
                             <li><a href="project-gallery.html">Project Gallery</a></li>
@@ -215,20 +225,6 @@
                         our products serve combined-cycle power plants, industrial facilities, and
                         renewable energy installations around the world.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="15">15+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="60">60+</span>
-                            <span class="stat-label">Countries Served</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="300">300+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="about-image">
                     <div class="image-frame">
@@ -258,7 +254,7 @@
                 <!-- ========== Category A: Heat Recovery Steam Generator ========== -->
                 <div class="product-card product-category" id="heat-recovery">
                     <div class="product-card-image">
-                        <img src="images/hrsg_modules.webp" alt="Heat Recovery Steam Generator Modules" />
+                        <img src="images/hrsg-module-bright.webp" alt="Heat Recovery Steam Generator Modules" />
                     </div>
                     <div class="product-icon">
                         <i class="fas fa-industry"></i>
@@ -267,7 +263,7 @@
                     <p>Complete HRSG module solutions for combined-cycle and conventional power plants — from finned tubes and headers to shop-assembled modules.</p>
                     <ul class="sub-product-list compact">
                         <li><i class="fas fa-grip-lines"></i> <span>Finned Tubes</span></li>
-                        <li><i class="fas fa-arrows-alt-h"></i> <span>Headers &amp; Manifolds</span></li>
+                        <li class="header-piping-item"><i class="fas fa-arrows-alt-h"></i> <span class="header-piping-label"><span>Headers &amp; Manifolds</span><span class="piping-label">/ Piping Spools</span></span></li>
                         <li><i class="fas fa-stream"></i> <span>Harps / Platens</span></li>
                         <li><i class="fas fa-cubes"></i> <span>Bundles / Modules</span></li>
                     </ul>
@@ -332,15 +328,16 @@
                     <div class="cap-content">
                         <h3><i class="fas fa-building"></i> Facility &amp; Equipment</h3>
                         <p>World-class manufacturing facility with dedicated production zones for fabrication, assembly, testing, and quality control. Equipped with advanced CNC cutting, automated welding systems, plate rolling machines, and heavy-duty lifting cranes for large-scale modular assemblies.</p>
+                        <a href="facility.html" class="cap-link">Explore Facility &amp; Equipment <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
-
-                <!-- Capability 2: Laboratory -->
+                <!-- Capability 3: Laboratory -->
                 <div class="capability-item">
                     <div class="cap-number">02</div>
                     <div class="cap-content">
                         <h3><i class="fas fa-flask"></i> Laboratory</h3>
                         <p>In-house materials testing laboratory equipped for chemical analysis, mechanical testing, metallurgical examination, non-destructive testing (NDT), and welding procedure qualification.</p>
+                        <a href="laboratory.html" class="cap-link">Explore Testing &amp; Laboratory <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -350,10 +347,11 @@
                     <div class="cap-content">
                         <h3><i class="fas fa-certificate"></i> Certifications</h3>
                         <p>Holding internationally recognized certifications including ASME S, U &amp; PP Stamps, ISO 9001 Quality Management System, ISO 14001 Environmental Management, and various national and international code compliances.</p>
+                        <a href="certifications.html" class="cap-link">View Certifications <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
-                <!-- Capability 4: Project Gallery -->
+                <!-- Capability 5: Project Gallery -->
                 <div class="capability-item gallery-highlight">
                     <div class="cap-number">04</div>
                     <div class="cap-content">
