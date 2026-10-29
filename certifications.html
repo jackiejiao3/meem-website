@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/iconlogo.png">
+    <link rel="shortcut icon" type="image/png" href="images/iconlogo.png">
+    <link rel="stylesheet" href="css/product-hero-backgrounds.css?v=20261022-balanced">
 </head>
 <body>
 
@@ -58,6 +61,7 @@
                         <a href="#" class="active">Capabilities <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="facility.html">Facility &amp; Equipment</a></li>
+                            <li><a href="design.html">Design &amp; Detailing</a></li>
                             <li><a href="laboratory.html">Laboratory</a></li>
                             <li><a href="certifications.html" style="color:var(--primary);font-weight:600;">Certifications</a></li>
                             <li><a href="project-gallery.html">Project Gallery</a></li>
@@ -70,7 +74,8 @@
     </header>
 
     <!-- ==================== PAGE HERO BANNER ==================== -->
-    <section class="page-hero" style="margin-top:75px;background:linear-gradient(135deg, #0d2137 0%, var(--primary-dark) 50%, #1a3a6b 100%);padding:100px 0 70px;text-align:center;position:relative;overflow:hidden;">
+    <section class="page-hero product-photo-hero" style="--product-hero-image:url('../images/hero-38-certifications-documents.webp');margin-top:75px;background:linear-gradient(135deg, #0d2137 0%, var(--primary-dark) 50%, #1a3a6b 100%);padding:100px 0 70px;text-align:center;position:relative;overflow:hidden;">
+        <div aria-hidden="true" style="position:absolute;inset:-24px;background:linear-gradient(180deg,rgba(12,17,23,.40),rgba(12,17,23,.46)),url('images/hero-38-certifications-documents.webp') center/cover no-repeat;filter:blur(1.5px);pointer-events:none;"></div>
         <div style="position:absolute;top:-50px;right:-40px;width:340px;height:340px;border-radius:50%;background:rgba(247,147,30,0.07);filter:blur(50px);"></div>
         <div style="position:absolute;bottom:-60px;left:-40px;width:270px;height:270px;border-radius:50%;background:rgba(255,255,255,0.03);filter:blur(35px);"></div>
         <div class="container" style="position:relative;z-index:2;">
@@ -113,7 +118,7 @@
                 </div>
                 <div class="about-image">
                     <div class="image-frame">
-                        <img src="images/certifications.webp" alt="MEEM Quality Standards" />
+                        <img src="images/certifications-no-masks.webp" alt="MEEM Quality Standards" style="filter:blur(1.2px);transform:scale(1.01);" />
                         <div class="image-caption">Certified to International Quality &amp; Safety Standards</div>
                     </div>
                 </div>
