@@ -1,0 +1,32 @@
+/* Product-based photographic hero backgrounds with a contrast-safe text layer. */
+.product-photo-hero {
+ background-image:radial-gradient(ellipse at 50% 45%,rgba(12,17,23,.16),rgba(12,17,23,0) 72%),linear-gradient(180deg,rgba(12,17,23,.40),rgba(12,17,23,.46)),var(--product-hero-image) !important;
+ background-size:cover !important;
+ background-position:center !important;
+ background-repeat:no-repeat !important;
+ background-attachment:scroll !important;
+}
+.page-hero.product-photo-hero {
+ min-height:clamp(360px,33.333vw,560px);
+ display:flex;align-items:center;justify-content:center;
+ padding:80px 0 68px !important;
+}
+.product-photo-hero h1 {
+ color:#fff !important;
+ text-shadow:0 2px 12px rgba(0,0,0,.38);
+}
+.product-photo-hero p {
+ color:#fff !important;
+ text-shadow:0 1px 6px rgba(0,0,0,.35);
+}
+.page-hero.product-photo-hero .container > span {
+ color:#ffbd69 !important;
+ text-shadow:0 1px 5px rgba(0,0,0,.4);
+}
+.hero.product-photo-hero .hero-overlay {
+ background:linear-gradient(90deg,rgba(3,15,34,.16),rgba(3,15,34,.04) 65%,transparent);
+}
+@media(max-width:700px) {
+ .page-hero.product-photo-hero { min-height:340px;padding:76px 0 54px !important; }
+ .page-hero.product-photo-hero h1 { font-size:clamp(1.9rem,7vw,2.6rem) !important; }
+}
