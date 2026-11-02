@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ==================== Header Scroll Effect ====================
     const header = document.getElementById('mainHeader');
-    const topBarHeight = 32; // matches .top-bar height
 
     function handleScroll() {
         if (window.scrollY > 80) {
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var targetEl = document.querySelector(targetId);
             if (targetEl) {
                 //e.preventDefault();
-                var headerOffset = header.classList.contains('scrolled') ? 75 : 107; // header height
+                var headerOffset = header.getBoundingClientRect().bottom; // actual header position, including the top bar
                 var elementPosition = targetEl.getBoundingClientRect().top;
                 var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

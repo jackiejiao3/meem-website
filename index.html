@@ -28,34 +28,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/iconlogo.png">
     <link rel="shortcut icon" type="image/png" href="images/iconlogo.png">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20261102-group-header">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Homepage header preview styles -->
-    <style>
-        /* Homepage group affiliation preview; shared styles and inner pages stay unchanged. */
-        .top-bar.home-group-topbar { padding:10px 0; font-size:13px; line-height:1.5; }
-        .home-group-topbar .container { gap:16px; }
-        .home-group-topbar .top-bar-left { display:flex; align-items:center; }
-        .home-group-topbar .group-affiliation-label { font-size:13px; white-space:nowrap; }
-        .home-group-topbar .top-bar-right { display:flex; align-items:center; gap:16px; }
-        .home-group-topbar .group-email { color:rgba(255,255,255,0.9); white-space:nowrap; }
-        .home-group-topbar .group-email:hover { color:#fff; }
-        .home-group-topbar .group-site-button { display:inline-block; padding:5px 11px; border-radius:3px; background:#dcecf5; color:#04466c; font-size:12px; font-weight:600; line-height:1.5; white-space:nowrap; }
-        .home-group-topbar .group-site-button:hover,
-        .home-group-topbar .group-site-button:focus-visible { background:#c8e4f2; color:#04466c; }
-        .home-group-topbar a:focus-visible { outline:2px solid #fff; outline-offset:3px; }
-        @media (min-width:769px) {
-            /* Match MMEC's 48px top bar: 10px padding + 28px button + 10px padding. */
-            .top-bar.home-group-topbar { height:48px; }
-            .main-header { top:48px; }
-            .main-header.scrolled { top:0; }
-            .hero { margin-top:48px; }
-        }
-    </style>
 
     <!-- Interactive Map Styles -->
     <style>
@@ -136,14 +113,14 @@
 <body>
 
     <!-- ==================== TOP BAR ==================== -->
-    <div class="top-bar home-group-topbar">
+    <div class="top-bar group-affiliation-topbar">
         <div class="container">
             <div class="top-bar-left">
                 <span class="group-affiliation-label">A Modern Group Company</span>
             </div>
             <div class="top-bar-right">
-                <a class="group-email" href="mailto:info@m-energy.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@m-energy.com</a>
                 <a class="group-site-button" href="https://modernhig.com/">Modern Group</a>
+                <a class="group-email" href="mailto:info@m-energy.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@m-energy.com</a>
             </div>
         </div>
     </div>
@@ -616,6 +593,6 @@
     </button>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js?v=20261102-group-header"></script>
 </body>
 </html>
