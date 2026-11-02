@@ -1,5 +1,20 @@
 ---
+# Deploy website files only. See README.md for the PR/deployment checklist.
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/mdhiglob/public_html/menergy/
-    - /bin/rsync -rv --no-perms --omit-dir-times --exclude='.git/' --exclude='.github/' --exclude='.cpanel.yml' --exclude='.gitignore' --exclude='.env' --exclude='*.log' ./ "$DEPLOYPATH"
+    # Stop before copying if the checkout or document root is unexpected.
+    - test "$DEPLOYPATH" = /home1/mdhiglob/public_html/menergy/ && test -d "$DEPLOYPATH" && test -f index.html && test -f form-handler.php && test -d css && test -d images
+    # Check contents, not just size/mtime. Preserve existing destination permissions.
+    # No --delete: server-only files and removed/renamed assets require separate review.
+    - >-
+      /bin/rsync -rcv --no-perms --omit-dir-times --chmod=D755,F644
+      --exclude='.git/' --exclude='.github/' --exclude='.env' --exclude='.env.*'
+      --exclude='quarantine/' --exclude='backups/' --exclude='*.bak' --exclude='*.log'
+      --exclude='/location-map-preview.html' --exclude='/map-comparison.html'
+      --include='/*.html'
+      --include='/css/***' --include='/images/***'
+      --include='/script.js' --include='/form-handler.php'
+      --include='/robots.txt' --include='/sitemap.xml'
+      --exclude='*'
+      ./ "$DEPLOYPATH"
