@@ -38,8 +38,10 @@ Every PR must review deployment impact; not every PR must edit the YAML.
 - Removing or renaming a file: check incoming links and document the old server
   path; the deployment does not remove it automatically.
 
-The current `main` still links to `design.html`, so it remains deployable.
-PR #4 has no changed files; its title alone does not remove that page.
+`design.html` has been removed together with its navigation links and homepage card.
+After deploying this removal, separately remove the old server file
+`/home1/mdhiglob/public_html/menergy/design.html` (download a backup first if needed).
+The normal deployment intentionally does not delete files from the server.
 The two excluded preview pages are `location-map-preview.html` and `map-comparison.html`.
 
 ## PR validation and production checks
