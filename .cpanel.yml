@@ -18,3 +18,12 @@ deployment:
       --include='/robots.txt' --include='/sitemap.xml'
       --exclude='*'
       ./ "$DEPLOYPATH"
+    # Retire only this explicitly removed page, retaining a backup outside public_html.
+    # The source check allows a future intentional restoration of design.html.
+    - >-
+      if [ "$DEPLOYPATH" = /home1/mdhiglob/public_html/menergy/ ] &&
+      [ ! -e ./design.html ] && [ -f "${DEPLOYPATH}design.html" ]; then
+      /bin/mkdir -p /home1/mdhiglob/deployment-quarantine/meem-website &&
+      DESIGN_BACKUP_DIR=$(/usr/bin/mktemp -d /home1/mdhiglob/deployment-quarantine/meem-website/design-XXXXXXXX) &&
+      /bin/mv -- "${DEPLOYPATH}design.html" "$DESIGN_BACKUP_DIR/design.html";
+      fi

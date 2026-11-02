@@ -36,12 +36,16 @@ Every PR must review deployment impact; not every PR must edit the YAML.
 - Changing the document root, build process or deployment behavior: update the
   YAML and explain the change in the same PR.
 - Removing or renaming a file: check incoming links and document the old server
-  path; the deployment does not remove it automatically.
+  path; normal copying does not remove it automatically. Explicitly reviewed
+  retirement tasks may quarantine individual named files outside the web root.
 
 `design.html` has been removed together with its navigation links and homepage card.
-After deploying this removal, separately remove the old server file
-`/home1/mdhiglob/public_html/menergy/design.html` (download a backup first if needed).
-The normal deployment intentionally does not delete files from the server.
+After copying the current site, deployment moves the old server file
+`/home1/mdhiglob/public_html/menergy/design.html` into a unique backup directory
+under `/home1/mdhiglob/deployment-quarantine/meem-website/design-XXXXXXXX/`.
+This directory is outside `public_html`. Only this named retired page is moved;
+other server files are preserved. Repeated deployment is safe when the page is absent.
+If `design.html` is intentionally restored in the source later, it is not quarantined.
 The two excluded preview pages are `location-map-preview.html` and `map-comparison.html`.
 
 ## PR validation and production checks
